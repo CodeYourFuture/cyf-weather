@@ -1,68 +1,85 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Set up
 
 In the project directory, you can run:
-
-### `npm start`
+> `npm install`
+> 
+> `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Instructions
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Aim
 
-### `npm run build`
+You will be connecting to a real-time weather API to make a weather app that looks like this:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[add screenshot of design]
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Planning
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Before you start coding, plan how you're going to structure your app. 
 
-### `npm run eject`
+Look at the design:
+- how could you break it up into components? 
+- In which component will you fetch the weather data? 
+- Which components need access to the weather data?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Getting the weather data
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+We'll be using data from this API: https://openweathermap.org/current#data
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The data will come in JSON format, and will look like this: https://samples.openweathermap.org/data/2.5/find?q=London&units=metric&appid=b6907d289e10d714a6e88b30761fae22
 
-## Learn More
+**1)** Register to get your personal API key. This is free, and will enable you to make (limited) requests to fetch the weather data you need. Follow the steps here: https://openweathermap.org/appid
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**2)** Once logged in, go to the API keys tab and copy the default Key. Keep this somewhere safe as you will need it when you fetch data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**3)** The format you'll need to follow to make API calls is:
+`https://api.openweathermap.org/data/2.5/weather?q=CITY_NAME&appid=YOUR_API_KEY`
 
-### Code Splitting
+where CITY_NAME is replaced by the city you're looking for, for example 'London', and YOUR_API_KEY is replaced with... your personal API key of course.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da04987637a23fcbc26f5356e12
 
-### Analyzing the Bundle Size
+### Start setting up your app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- You'll need several components - you can decide how much you want to break things up into different components, but at minimum you will need a `<Search />` component, and a `<CurrentWeather />` component (you can choose the naming you like).
 
-### Making a Progressive Web App
+- The search input (e.g. 'Birmingham') will need to be inserted into the API url (see above)
+  
+- The response you get from the API will need to be passed down to the `<CurrentWeather />` component so it knows what weather to display. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- The response will include a `weather` array with an object inside, which looks like this:
 
-### Advanced Configuration
+```
+"weather": [
+  {
+    "id": 521,
+    "main": "Rain",
+    "description": "shower rain",
+    "icon": "09d"
+  }
+]
+```
+**This is what we'll use to display the current weather icon.** You can ignore the rest of the weather data in the response for now. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+___________
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Stretch goals
 
-### `npm run build` fails to minify
+### Display the weather forecast for the next 5 days
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Add a new section to your app that will display the weather over the next 5 days in the given location.
+
+
+
+[design in progress... ]
+
+
