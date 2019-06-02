@@ -18,7 +18,7 @@ The page will reload if you make edits.<br>
 
 You will be connecting to a real-time weather API to make a weather app that looks like this:
 
-[add screenshot of design]
+![design](src/img/instructions/design1.png)
 
 ### Planning
 
@@ -43,7 +43,7 @@ The data will come in JSON format, and will look like this: https://samples.open
 ![api key](src/img/instructions/api-key.png)
 
 **3)** The format you'll need to follow to make API calls is:
-`https://api.openweathermap.org/data/2.5/weather?q=CITY_NAME&appid=YOUR_API_KEY`
+`https://api.openweathermap.org/data/2.5/weather?q=CITY_NAME&units=metric&appid=YOUR_API_KEY`
 
 where CITY_NAME is replaced by the city you're looking for, for example 'London', and YOUR_API_KEY is replaced with... your personal API key, of course.
 
