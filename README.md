@@ -43,7 +43,7 @@ The data will come in JSON format, and will look like this: https://samples.open
 **3)** The format you'll need to follow to make API calls is:
 `https://api.openweathermap.org/data/2.5/weather?q=CITY_NAME&appid=YOUR_API_KEY`
 
-where CITY_NAME is replaced by the city you're looking for, for example 'London', and YOUR_API_KEY is replaced with... your personal API key of course.
+where CITY_NAME is replaced by the city you're looking for, for example 'London', and YOUR_API_KEY is replaced with... your personal API key, of course.
 
 example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da04987637a23fcbc26f5356e12
 
@@ -51,9 +51,9 @@ example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da0
 
 - You'll need several components - you can decide how much you want to break things up into different components, but at minimum you will need a `<Search />` component, and a `<CurrentWeather />` component (you can choose the naming you like).
 
-- The search input (e.g. 'Birmingham') will need to be inserted into the API url (see above)
-  
-- The response you get from the API will need to be passed down to the `<CurrentWeather />` component so it knows what weather to display. 
+- The search input (e.g. 'Birmingham') will need to be inserted into the API url (see CITY_NAME above)
+
+- The response you get from the API will need to be passed down as props to the `<CurrentWeather />` component so it knows what weather to display. 
 
 - The response will include a `weather` array with an object inside, which looks like this:
 
@@ -69,6 +69,28 @@ example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da0
 ```
 **This is what we'll use to display the current weather icon.** You can ignore the rest of the weather data in the response for now. 
 
+### Matching up the weather `id` with the appropriate icon
+
+We will **not** be using the `icon` property of the data, we will only use the `id` and match it with our own svg icons. You can find these svgs in `src/img/weather-icons`.
+
+You will need to write some code to do the following:
+
+| if `id` is:         | then show icon named: |
+|---------------------|-----------------------|
+| less than 300       | storm.svg             |
+| between 300 and 499 | drizzle.svg           |
+| between 500 and 599 | rain.svg              |
+| between 600 and 699 | snow.svg              |
+| between 700 and 799 | fog.svg               |
+| equal to 800        | clear.svg             |
+| equal to 801        | partlycloudy.svg      |
+| between 801 and 805 | mostlycloudy.svg      |
+
+
+###Showing more weather information
+
+Once you're showing the icon, you can also display information about the temperature, the humidity etc. 
+Have a look at the response from the API to find this information, and try to display it as shown in the design! ;)
 
 ___________
 
@@ -78,8 +100,7 @@ ___________
 
 Add a new section to your app that will display the weather over the next 5 days in the given location.
 
-
-
 [design in progress... ]
 
+**Note:** You will need to make a different API call to get the 5-day forecast, as the current one only returns today's weather. The API for 5 days is here: https://openweathermap.org/forecast5
 
