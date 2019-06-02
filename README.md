@@ -40,6 +40,8 @@ The data will come in JSON format, and will look like this: https://samples.open
 
 **2)** Once logged in, go to the API keys tab and copy the default Key. Keep this somewhere safe as you will need it when you fetch data.
 
+![api key](src/img/instructions/api-key.png)
+
 **3)** The format you'll need to follow to make API calls is:
 `https://api.openweathermap.org/data/2.5/weather?q=CITY_NAME&appid=YOUR_API_KEY`
 
@@ -50,6 +52,9 @@ example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da0
 ### Start setting up your app
 
 - You'll need several components - you can decide how much you want to break things up into different components, but at minimum you will need a `<Search />` component, and a `<CurrentWeather />` component (you can choose the naming you like).
+
+![wireframe](src/img/instructions/wireframe.png)
+
 
 - The search input (e.g. 'Birmingham') will need to be inserted into the API url (see CITY_NAME above)
 
@@ -67,7 +72,7 @@ example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da0
   }
 ]
 ```
-**This is what we'll use to display the current weather icon.** You can ignore the rest of the weather data in the response for now. 
+**This is what we'll use to display the current weather icon.**
 
 ### Matching up the weather `id` with the appropriate icon
 
@@ -86,8 +91,9 @@ You will need to write some code to do the following:
 | equal to 801        | partlycloudy.svg      |
 | between 801 and 805 | mostlycloudy.svg      |
 
+So for example, in the above response, the `id` was 521, which is between 500 and 599, so the icon to display will be `rain.svg`
 
-###Showing more weather information
+### Showing more weather information
 
 Once you're showing the icon, you can also display information about the temperature, the humidity etc. 
 Have a look at the response from the API to find this information, and try to display it as shown in the design! ;)
