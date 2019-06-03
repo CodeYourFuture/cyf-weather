@@ -28,7 +28,8 @@ Look at the design:
 - how could you break it up into components? 
 - In which component will you fetch the weather data? 
 - Which components need access to the weather data?
-
+- What pieces of weather information will you need from the JSON? ([See example JSON here](https://samples.openweathermap.org/data/2.5/find?q=London&units=metric&appid=b6907d289e10d714a6e88b30761fae22))
+- What interactions will the user have with your app?
 
 ### Getting the weather data
 
