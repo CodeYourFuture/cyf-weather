@@ -2,15 +2,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Set up
 
+Please **fork** and **clone** this repository, and navigate to the correct directory using the command line.
+
 In the project directory, you can run:
 > `npm install`
 > 
 > `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
+This runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser, and enter a city name in the search bar to see results.
 
 ## Instructions
 
@@ -18,23 +18,31 @@ The page will reload if you make edits.<br>
 
 You will be connecting to a real-time weather API to make a weather app that looks like this:
 
-![design](src/img/instructions/design1.png)
+![final design](src/img/instructions/final-design.png)
 
-### Planning
+![designgif](src/img/instructions/weatherappdemo.gif)
 
-Before you start coding, plan how you're going to structure your app. 
+### Getting started
 
-Look at the design:
-- how could you break it up into components? 
-- In which component will you fetch the weather data? 
-- Which components need access to the weather data?
+Let's start slow by creating the HTML and CSS we need to make the app look like the design: do this is App.js and App.css
 
+Don't worry about fetching data yet, you can use invented values for now - just focus on getting content up on the page and imitating the design provided. 
+
+A few things to think of:
+
+- The font you need is called `Raleway` and is already loaded up into the project - but remember you'll need to declare it in your CSS.
+- You'll need to copy the colours, spacing, layout and size of elements in the design. This is a core skill as a front-end developer! :)
+- Extra points if you can think of a nice way to display the app on mobile ;)
+
+Once you're happy with how the page looks, it's time to fetch some real weather data!
 
 ### Getting the weather data
 
-We'll be using data from this API: https://openweathermap.org/current#data
+We'll be using data from this API: http://api.openweathermap.org/data/2.5/forecast
 
-The data will come in JSON format, and will look like this: https://samples.openweathermap.org/data/2.5/find?q=London&units=metric&appid=b6907d289e10d714a6e88b30761fae22
+?q=${this.state.searchInput}&cnt=8&units=metric&appid=${apiKey}
+
+The data will come in JSON format, and will look like this: https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22
 
 **1)** Register to get your personal API key. This is free, and will enable you to make (limited) requests to fetch the weather data you need. Follow the steps here: https://openweathermap.org/appid
 
@@ -43,11 +51,22 @@ The data will come in JSON format, and will look like this: https://samples.open
 ![api key](src/img/instructions/api-key.png)
 
 **3)** The format you'll need to follow to make API calls is:
-`https://api.openweathermap.org/data/2.5/weather?q=CITY_NAME&units=metric&appid=YOUR_API_KEY`
+`http://api.openweathermap.org/data/2.5/forecast?q=${CITY_NAME}&cnt=8&units=metric&appid=${YOUR_API_KEY}`
 
 where CITY_NAME is replaced by the city you're looking for, for example 'London', and YOUR_API_KEY is replaced with... your personal API key, of course.
 
-example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da04987637a23fcbc26f5356e12
+example format: http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&units=metric&appid=57cf9da04987637a23fcbc26f5356e12 (this doesn't work because it's a fake API key, but when you replace it with yours, it will ;) )
+
+**Think about when you want to fetch your data...**
+
+### Breaking your app up into components
+
+Once you've got it looking good and you're successfully fetching some data, it's time to break your app up into components so you can loop through the data results and display the weather forecast.
+
+Look at the design:
+- how could you break it up into components? 
+- In which component would you fetch the weather data? 
+- Which components need access to the weather data?
 
 ### Start setting up your app
 
@@ -60,7 +79,8 @@ example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da0
 
 - The response you get from the API will need to be passed down as props to the `<CurrentWeather />` component so it knows what weather to display. 
 
-- The response will include a `weather` array with an object inside, which looks like this:
+- The response will include **a `list` array containing the weather forecast for the next 24 hours, split into 8 x 3-hour chunks** 
+Each object inside `list` contains a `weather` array with an object that looks like this:
 
 ```
 "weather": [
@@ -72,7 +92,7 @@ example: https://api.openweathermap.org/data/2.5/weather?q=London&appid=57cf9da0
   }
 ]
 ```
-**This is what we'll use to display the current weather icon.**
+**The `id` is what we'll use to display the current weather icon.**
 
 ### Matching up the weather `id` with the appropriate icon
 
@@ -102,11 +122,13 @@ ___________
 
 ## Stretch goals
 
-### Display the weather forecast for the next 5 days
+### Display the weather forecast for the next 24 hours
 
-Add a new section to your app that will display the weather over the next 5 days in the given location.
+Add a new section to your app that will display the weather over the next 24 hours in the given location.
 
-[design in progress... ]
+![final design](src/img/instructions/final-design.png)
 
-**Note:** You will need to make a different API call to get the 5-day forecast, as the current one only returns today's weather. The API for 5 days is here: https://openweathermap.org/forecast5
+**Think about how you can manipulate the data to display the weather for each 3-hour chunk...**
 
+
+Good luck!
