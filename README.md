@@ -26,7 +26,7 @@ You will be connecting to a real-time weather API to make a weather app that loo
 
 Let's start slow by creating the HTML and CSS we need to make the app look like the design: do this is App.js and App.css
 
-Don't worry about fetching data yet, you can use invented values for now - just focus on getting content up on the page and imitating the design provided. 
+Don't worry about fetching data yet, you can use **invented and hardcoded** values for now - just focus on getting content up on the page and imitating the design provided. 
 
 A few things to think of:
 
@@ -34,7 +34,31 @@ A few things to think of:
 - You'll need to copy the colours, spacing, layout and size of elements in the design. This is a core skill as a front-end developer! :)
 - Extra points if you can think of a nice way to display the app on mobile ;)
 
-Once you're happy with how the page looks, it's time to fetch some real weather data!
+### Let's try it with a JSON file
+
+Once you're happy with how the page looks, let's get rid of the hardcoded temperatures and other values, and put in a sample JSON file. This means your app will read those values locally, from a static JSON file you should include in your project.
+
+You can use this JSON file: https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22. Copy all contents into a new file and add it to your project.
+
+This JSON represents weather data for **just one city**.
+
+It includes **a `list` array containing the weather forecast for the next 24 hours, split into 8 x 3-hour chunks** 
+Each object inside `list` contains a `weather` array with an object that looks like this:
+
+```
+"weather": [
+  {
+    "id": 521,
+    "main": "Rain",
+    "description": "shower rain",
+    "icon": "09d"
+  }
+]
+```
+
+Read the values you're displaying on your page from this file.
+
+Now you've got your JSON sorted, it's time to fetch some real weather data!
 
 ### Getting the weather data
 
@@ -79,7 +103,7 @@ Look at the design:
 
 - The response you get from the API will need to be passed down as props to the `<CurrentWeather />` component so it knows what weather to display. 
 
-- The response will include **a `list` array containing the weather forecast for the next 24 hours, split into 8 x 3-hour chunks** 
+- As we've seen before, the response will include **a `list` array containing the weather forecast for the next 24 hours, split into 8 x 3-hour chunks** 
 Each object inside `list` contains a `weather` array with an object that looks like this:
 
 ```
