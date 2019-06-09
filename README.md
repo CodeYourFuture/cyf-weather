@@ -62,9 +62,7 @@ Now you've got your JSON sorted, it's time to fetch some real weather data!
 
 ### Getting the weather data
 
-We'll be using data from this API: http://api.openweathermap.org/data/2.5/forecast
-
-?q=${this.state.searchInput}&cnt=8&units=metric&appid=${apiKey}
+We'll be using data from this API: http://api.openweathermap.org/data/2.5/forecast?q=${this.state.searchInput}&cnt=8&units=metric&appid=${apiKey}
 
 The data will come in JSON format, and will look like this: https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22
 
