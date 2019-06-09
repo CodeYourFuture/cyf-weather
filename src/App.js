@@ -10,10 +10,53 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="app__header" />
-        <h2>Say Hello To Todays Weather Mohbeen </h2>
-        <main className="app__main" />
-      </div>
+      <div className="container">
+        <header className="app__header">
+          <div className="searchbar">
+           <input className="Search"/>
+           <button>Find Weather</button>
+          </div>
+        </header>
+
+        <main className="app__main" >
+          <div className="Todays weather">
+            <div className ="current Weather">
+            <h4 className="temp" >Temperature</h4>
+            <div className="characteristics"> 
+            <h6 className="humidity ">Humidity</h6>
+            <h6 className="pressure">Pressure </h6>
+            </div>
+            </div>
+          </div> 
+        </main>
+
+        <span className="upcoming">
+         <ul>
+           <li>
+             <div className="time img temp">03:00</div>
+           </li>
+           <li>
+             <div className="time img temp">06:00</div>
+           </li>
+           <li>
+             <div className="time img temp">09:00</div>
+           </li>
+           <li>
+             <div className="time img temp">12:00</div>
+           </li>
+           <li>
+             <div className="time img temp">15:00</div>
+           </li>
+           <li>
+             <div className="time img temp">18:00</div>
+           </li>
+           <li>
+             <div className="time img temp">21:00</div>
+           </li>
+         </ul>
+        </span>
+    </div>
+    </div>
     );
   }
 }

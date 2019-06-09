@@ -16,13 +16,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  border: lightblue solid;
+}
 
 /*  Search bar */
-
+.app__header {
+  border: blue solid;
+  justify-content: flex-start;
+}
 
 
 /* Current weather */
 
+.characteristics {
+  display: flex;
+  justify-content: space-between;
+}
 
-
-
+.upcoming{
+  display: flex; 
+  align-items: center;
+}
