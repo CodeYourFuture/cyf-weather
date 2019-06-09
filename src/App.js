@@ -31,6 +31,17 @@ class App extends Component {
         <div className="App-main ">
           <img src={cloudy} className="App-clear" align="bottom" />
         </div>
+        <div>
+          <ul>
+            <li>03:00</li>
+            <li>06:00</li>
+            <li>09:00</li>
+            <li>12:00</li>
+            <li>15:00</li>
+            <li>18:00</li>
+            <li>21:00</li>
+          </ul>
+        </div>
       </div>
     );
   }

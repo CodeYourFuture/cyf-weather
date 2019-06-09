@@ -5,15 +5,30 @@
   background-color: #8ccef4;
 }
 .App-clear {
-  display: flex;
   height: 200px;
   width: 50%;
 }
 .App-main {
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  align-items: baseline;
 }
+
 .place-holder {
   background-color: #4f79c6;
 }
