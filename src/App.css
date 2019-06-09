@@ -23,17 +23,35 @@
 
 .app-header {
   background-color: #759DD2;
-  height: 70px;
-  padding: 10px 150px;
-  color: white;
-  text-align: left;
+  height: 100px;
   font-family: Raleway;
-  font-size: 2em;
+  padding: 35px 50px;
+  align-items: center;
+  
+}
+.inputBar{
+  background-color: #759DD2;
+  font-family: Raleway;
+  font-size:16px; 
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
   
 }
 
 .btn {
-  background-color: #759DD2;
+  font-family: Raleway;
+  font-size:14px; 
+  padding: 10px;
+  text-transform: uppercase;
+  background: #587AC2;
+  padding: 10px;
+  margin-left: 20px; 
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  
 
 }
 
@@ -43,6 +61,31 @@
 .app_main {
    background-color: #9CCDF2;
    height: 100%;
+   align-items: center;
+}
+
+.main_pic .main_pic_icon {
+  display: flex;
+  width:70%;
+  align-items: center;
+  margin-top: 30px;
+    
+}
+.main_pic {
+  display: flex;
+  justify-content: center;
+}
+.overcast {
+  font-family: Raleway;
+  font-size:16px; 
+  color: white;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.temp {
+  color: #000030;
+  margin-top: 20px;
 }
 
 
