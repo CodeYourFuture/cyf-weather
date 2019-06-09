@@ -8,6 +8,8 @@
 
 .app__header {
   background-color: dodgerblue;
+  color: white;
+  display: flex;
 }
 .app__main {
   width: 100%;
@@ -21,5 +23,12 @@
 }
 
 /*  Search bar */
-
+.btn {
+  width: 100px;
+  background-color: darkblue;
+  padding: 10px;
+  margin: 3px;
+  position: relative;
+  left: 200px;
+}
 /* Current weather */
