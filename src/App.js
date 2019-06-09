@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import './grid.css';
 
@@ -13,9 +14,11 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <header className="app__header" />
+        <header className="app-header">
+          <button className="btn">Find Weather</button>
+        </header>
        
-        <main className="app__main">
+        <main className="app_main">
         </main>
       </div>
     );
