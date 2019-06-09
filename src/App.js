@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import svg from "./src/img/weather-icons/clear.svg";
+import final from "./img/instructions/final-design.png";
 
 class App extends Component {
   constructor(props) {
@@ -12,8 +12,15 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app__header" />
-        hello
-        <img src={clear.svg} />
+        <label className="label"> insert your city here</label>
+        <input type="text-box" name="City here" className="textbox" />
+        <button type="button" className="weatherbutton">
+          Find Weather!
+        </button>
+        <div>
+          <img src={final} />
+        </div>
+
         <main className="app__main" />
       </div>
     );
