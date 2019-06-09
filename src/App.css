@@ -2,17 +2,38 @@
   height: 100vh;
   width: 100vw;
   transition: background-color 1s ease-in;
-  background-color: blue;
+  background-color: #8ccef4;
+}
+.App-clear {
+  display: flex;
+  height: 200px;
+  width: 50%;
+}
+.App-main {
+  display: flex;
+  align-items: flex-end;
+  align-items: baseline;
+}
+.place-holder {
+  background-color: #4f79c6;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #689dda;
 }
 .label {
   font-size: 50px;
   padding: 1;
 }
 .weatherbutton {
-  width: 200px;
+  width: 300px;
   border: 2px solid green;
   padding: 25px;
   margin: 2px;
+  background-color: #4f79c6;
+  font-size: 30px;
 }
 .textbox {
   width: 200px;

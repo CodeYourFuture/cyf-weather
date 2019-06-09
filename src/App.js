@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import final from "./img/instructions/final-design.png";
+import cloudy from "./img/weather-icons/cloudy.svg";
 
 class App extends Component {
   constructor(props) {
@@ -12,16 +12,25 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app__header" />
-        <label className="label"> insert your city here</label>
-        <input type="text-box" name="City here" className="textbox" />
-        <button type="button" className="weatherbutton">
-          Find Weather!
-        </button>
-        <div>
-          <img src={final} />
+        <div className="flex-container">
+          <form onSubmit>
+            <input
+              type="text"
+              name="city"
+              placeholder="City..."
+              background-color="red"
+            />
+
+            <button className="weatherbutton">Find Weather!</button>
+          </form>
         </div>
 
-        <main className="app__main" />
+        <div />
+
+        <main />
+        <div className="App-main ">
+          <img src={cloudy} className="App-clear" align="bottom" />
+        </div>
       </div>
     );
   }
