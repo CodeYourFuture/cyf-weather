@@ -22,21 +22,34 @@ You will be connecting to a real-time weather API to make a weather app that loo
 
 ![designgif](src/img/instructions/weatherappdemo.gif)
 
-### Getting started
+### 1. Getting started: Static HTML and CSS
 
 Let's start slow by creating the HTML and CSS we need to make the app look like the design: do this is App.js and App.css
 
-Don't worry about fetching data yet, you can use **invented and hardcoded** values for now - just focus on getting content up on the page and imitating the design provided. 
+Don't worry about fetching data yet, you can use **invented, "hardcoded"** values for now - just focus on getting content up on the page and imitating the design provided. However, do not leave out the values!  Put numbers in so that you can confirm how the layout will work with numbers present.  Using the numbers that occur in the screenshot is a good idea.
 
 A few things to think of:
 
 - The font you need is called `Raleway` and is already loaded up into the project - but remember you'll need to declare it in your CSS.
 - You'll need to copy the colours, spacing, layout and size of elements in the design. This is a core skill as a front-end developer! :)
+- Use placeholder images (such as [https://placekitten.com/](these kittens)).
 - Extra points if you can think of a nice way to display the app on mobile ;)
 
-### Let's try it with a JSON file
+Once you're happy with the way your app looks, it's time to move on.
 
-Once you're happy with how the page looks, let's get rid of the hardcoded temperatures and other values, and put in a sample JSON file. This means your app will read those values locally, from a static JSON file you should include in your project.
+### 2. Break your HTML into React components
+
+This is about cutting up your one big single block of HTML and putting sections of it in React components instead.
+
+For example, if you find yourself copy-pasting an html section multiple times with small changes, you've probably found a good candidate for a reusable React component.
+
+Naming is hard.  Pick good names.  
+
+The React components at this stage should still have hardcoded numbers for temperature, etc.
+
+### 3. Let's try it with a **STATIC** JSON file
+
+Now let's use an example **static** JSON file and use the data in that JSON object for our temperature and other values.  This means your app will read those values locally, from a static JSON file you should include in your project.
 
 You can use this JSON file: https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22. Copy all contents into a new file and add it to your project.
 
