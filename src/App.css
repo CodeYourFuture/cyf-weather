@@ -10,6 +10,7 @@
   background-color: dodgerblue;
   color: white;
   display: flex;
+  height: 80px;
 }
 .app__main {
   width: 100%;
@@ -25,10 +26,27 @@
 /*  Search bar */
 .btn {
   width: 100px;
-  background-color: darkblue;
-  padding: 10px;
-  margin: 3px;
+  color: darkblue;
+  background-color: rgb(0, 102, 255);
+  padding: 19px;
+  margin: 15px;
   position: relative;
   left: 200px;
+  font-size: 13px;
 }
+
 /* Current weather */
+.temp {
+  color: darkblue;
+}
+.tempInfo {
+  color: darkblue;
+  margin: 5px;
+}
+.table {
+  color: darkblue;
+  width: 75%;
+}
+.img-size {
+  width: 30%;
+}
