@@ -101,6 +101,7 @@
 .twentyfour_hours {
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
   margin: 50px;
   justify-content: space-around;
 }
