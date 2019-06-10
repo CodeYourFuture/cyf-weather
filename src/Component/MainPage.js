@@ -12,7 +12,7 @@ import React, { Component } from 'react'
                         <div>Humidity   <span className="digit">78%</span></div>
                         <div>Pressure   <span className="digit">1008.48</span></div>
                     </div>
-                    <div className="twentyfour_hours">
+                    <div className="twentyfour_hours  md-col-7 ">
                         <div>
                             <div className="time">03:00</div>
                             <div><img src="https://i.postimg.cc/2yF8LD0n/cloud-sun-copy-copy.png" className="icon" /></div>

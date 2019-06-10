@@ -15,15 +15,34 @@
 .container {
   /* default from breakpoint 0, until another breakpoint overrides it */
   max-width: 100%;
+  max-height: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
+@media (min-width: 300px) {
+  .container {
+    max-width: 300px;
+  }
+  .app-header {
+    height: 140px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+ 
+}
 
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+  .app-header {
+    height: 140px;
+  }
+  .btn {
+    margin-top: 10px;
   }
 }
 
@@ -31,6 +50,7 @@
   .container {
     max-width: 720px;
   }
+  
 }
 
 @media (min-width: 992px) {
