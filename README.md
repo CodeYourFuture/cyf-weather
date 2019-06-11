@@ -48,7 +48,7 @@ A few things to think of:
 
 - The font you need is called `Raleway` and is already loaded up into the project - but remember you'll need to declare it in your CSS.
 - You'll need to copy the colours, spacing, layout and size of elements in the design. This is a core skill as a front-end developer! :)
-- Use placeholder images (such as [https://placekitten.com/](these kittens)), initially.
+- Use placeholder images (such as [these kittens](https://placekitten.com/) ), initially.
 - Extra points if you can think of a nice way to display the app on mobile ;)
 
 #### A note on using images in React
