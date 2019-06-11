@@ -2,15 +2,31 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Set up
 
-Please **fork** and **clone** this repository, and navigate to the correct directory using the command line.
+Please **fork** and **clone** this repository.  There are instructions for how to do that (and more), in the first half of the syllabus's ["Making a Pull Request"](https://codeyourfuture.github.io/syllabus-master/others/making-a-pull-request.html)
+
+Then navigate to the correct directory using the command line.
 
 In the project directory, you can run:
-> `npm install`
-> 
-> `npm start`
+```
+npm install
 
-This runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser, and enter a city name in the search bar to see results.
+npm start
+```
+
+This runs the app in the development mode.
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+Edit `App.js` and add a tiny change - maybe have the blank page say your name!
+
+Add and commit this change to git, and push it up to your remote github repo:
+```
+git add .
+git commit -m "Added my name to the app!"
+git push
+```
+
+Pay attention to any errors, and then check that your changes made it to github, by visiting github.com with your browser and inspecting your repo there.
 
 ## Instructions
 
@@ -32,8 +48,25 @@ A few things to think of:
 
 - The font you need is called `Raleway` and is already loaded up into the project - but remember you'll need to declare it in your CSS.
 - You'll need to copy the colours, spacing, layout and size of elements in the design. This is a core skill as a front-end developer! :)
-- Use placeholder images (such as [https://placekitten.com/](these kittens)).
+- Use placeholder images (such as [https://placekitten.com/](these kittens)), initially.
 - Extra points if you can think of a nice way to display the app on mobile ;)
+
+#### A note on using images in React
+
+Once you have your design working with placeholder images, you can try using the weather icons we've provided.
+
+There is a special way to show images from a React app created with create-react-app.  You can [read about how to add and use images in a create-react-app project in the official docs](https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files), but in short, you'll need to do these two things:
+
+At the top of your component, import the image:
+
+```
+import storm from '../img/weather-icons/storm.svg';
+```
+
+Then later in your `<img/>` tag, use the imported value as the image source, like this:
+```
+<img src={storm} alt="storm icon" />
+```
 
 Once you're happy with the way your app looks, it's time to move on.
 
@@ -41,17 +74,39 @@ Once you're happy with the way your app looks, it's time to move on.
 
 This is about cutting up your one big single block of HTML and putting sections of it in React components instead.
 
-For example, if you find yourself copy-pasting an html section multiple times with small changes, you've probably found a good candidate for a reusable React component.
+You'll need several components - you can decide how much you want to break things up into different components, but at minimum you will need a `<Search />` component, and a `<CurrentWeather />` component (you can choose the naming you like).
 
-Naming is hard.  Pick good names.  
+![wireframe](src/img/instructions/wireframe.png)
 
-The React components at this stage should still have hardcoded numbers for temperature, etc.
+If you find yourself copy-pasting an html section multiple times with small changes, you've probably found a good candidate for a reusable React component.
 
-### 3. Let's try it with a **STATIC** JSON file
+Note that your React components at this stage should still have hardcoded numbers for temperature, etc.
+
+### 3. Practice using props to populate your values
+
+If you're still new to React and props you should now spend a little time practicing passing props from parent component to child component, and using those props to populate the values (such as the temperature).  
+
+Don't invest too much time in this, however, because what we pass will change in the next step.
+
+### 4. Let's try it with a **STATIC** JSON file
 
 Now let's use an example **static** JSON file and use the data in that JSON object for our temperature and other values.  This means your app will read those values locally, from a static JSON file you should include in your project.
 
-You can use this JSON file: https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22. Copy all contents into a new file and add it to your project.
+You can use this JSON file: https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22. 
+
+Copy all contents into a new file and add it to your project somewhere under the `src/` directory.  Perhaps name it `FakeWeather.json` and store it in a new folder `src/data/`.
+
+Import it into your react app with
+
+```
+import FakeWeather from "./data/FakeWeather.json";
+```
+
+Into which react component should you load it?  The highest component in the hierarchy that needs to know about the weather, or that needs to communicate it to its children.
+
+#### About the JSON structure
+
+Spend some time investigating the json structure and figuring out which bits you need to use.
 
 This JSON represents weather data for **just one city**.
 
@@ -69,11 +124,15 @@ Each object inside `list` contains a `weather` array with an object that looks l
 ]
 ```
 
-Read the values you're displaying on your page from this file.
+#### Extracting the values from the Fake Weather json
 
-Now you've got your JSON sorted, it's time to fetch some real weather data!
+Now it's time to replace all of the hard-coded values in your html with values from `FakeWeather.json`.
 
-### Getting the weather data
+You will probably have to pass sections of the weather object to child components, as props.
+
+Once you've got this all working, it's time to fetch some real weather data!
+
+### 5. Getting the LIVE weather data
 
 We'll be using data from this API: http://api.openweathermap.org/data/2.5/forecast?q=${this.state.searchInput}&cnt=8&units=metric&appid=${apiKey}
 
@@ -94,23 +153,13 @@ example format: http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&u
 
 **Think about when you want to fetch your data...**
 
-### Breaking your app up into components
-
-Once you've got it looking good and you're successfully fetching some data, it's time to break your app up into components so you can loop through the data results and display the weather forecast.
+#### Thinking about data flow through your components
 
 Look at the design:
-- how could you break it up into components? 
-- In which component would you fetch the weather data? 
 - Which components need access to the weather data?
+- The first parent of all of those is probably the one in which you would fetch the weather data.  It would then pass the details to its children via their props.
 
-### Start setting up your app
-
-- You'll need several components - you can decide how much you want to break things up into different components, but at minimum you will need a `<Search />` component, and a `<CurrentWeather />` component (you can choose the naming you like).
-
-![wireframe](src/img/instructions/wireframe.png)
-
-
-- The search input (e.g. 'Birmingham') will need to be inserted into the API url (see CITY_NAME above)
+- The search input (e.g. 'Birmingham') will need to be inserted into the API url during the fetch (see CITY_NAME above)
 
 - The response you get from the API will need to be passed down as props to the `<CurrentWeather />` component so it knows what weather to display. 
 
@@ -129,7 +178,7 @@ Each object inside `list` contains a `weather` array with an object that looks l
 ```
 **The `id` is what we'll use to display the current weather icon.**
 
-### Matching up the weather `id` with the appropriate icon
+### 6. Matching up the weather `id` with the appropriate icon
 
 We will **not** be using the `icon` property of the data, we will only use the `id` and match it with our own svg icons. You can find these svgs in `src/img/weather-icons`.
 
@@ -148,10 +197,15 @@ You will need to write some code to do the following:
 
 So for example, in the above response, the `id` was 521, which is between 500 and 599, so the icon to display will be `rain.svg`
 
-### Showing more weather information
+### 7. Showing more weather information
 
 Once you're showing the icon, you can also display information about the temperature, the humidity etc. 
 Have a look at the response from the API to find this information, and try to display it as shown in the design! ;)
+
+### 8. Error-Handling
+
+What should happen if the network is down, or if someone searches for a city which doesn't exist, or is misspelled?
+
 
 ___________
 
