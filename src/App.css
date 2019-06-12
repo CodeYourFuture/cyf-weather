@@ -25,17 +25,30 @@
 
 /*  Search bar */
 .btn {
-  width: 100px;
   color: darkblue;
+  border: 1px solid rgb(0, 102, 255);
   background-color: rgb(0, 102, 255);
-  padding: 19px;
+  padding: 10px 30px 10px 30px;
   margin: 15px;
   position: relative;
   left: 200px;
-  font-size: 13px;
+  font-size: 15px;
+  display: inline;
+}
+.text {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid lightskyblue;
+  color: white;
+  font-size: 20px;
+  outline: none;
 }
 
 /* Current weather */
+.flex-container1 {
+  display: flex;
+  flex-direction: column;
+}
 .temp {
   color: darkblue;
 }
@@ -70,4 +83,80 @@
 }
 .img-size {
   width: 40%;
+}
+@media (max-width: 576px) {
+  .flex-container1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .tempInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .text {
+    position: relative;
+    left: 50px;
+  }
+  .btn {
+    position: relative;
+    left: 50px;
+  }
+  @media (max-width: 768px) {
+    .flex-container1 {
+      display: flex;
+      flex-direction: column;
+    }
+    .tempInfo {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .tempInfo {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .text {
+      position: relative;
+      left: 50px;
+    }
+    .btn {
+      position: relative;
+      left: 50px;
+    }
+  }
+  @media (max-width: 992px) {
+    .flex-container1 {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+    .tempInfo {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .text {
+      position: relative;
+      left: 50px;
+    }
+    .btn {
+      position: relative;
+      left: 50px;
+    }
+  }
 }
