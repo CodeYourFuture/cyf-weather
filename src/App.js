@@ -31,79 +31,85 @@ class App extends Component {
           </h5>
           <br />
           <br />
-          <br />
-          <table class="table">
-            <tr>
-              <td>03:00</td>
-              <td>06:00</td>
-              <td>09:00</td>
-              <td>12:00</td>
-              <td>15:00</td>
-              <td>18:00</td>
-              <td>21:00</td>
-            </tr>
-            <br />
-            <tr>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Snow_Occasional.png"
-                />
-              </td>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Snow_Occasional.png"
-                  alt="SnowOcassional"
-                />
-              </td>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
-                  alt="Sunny"
-                />
-              </td>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
-                  alt="Sunny"
-                />
-              </td>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
-                  alt="Sunny"
-                />
-              </td>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
-                  alt="Sunny"
-                />
-              </td>
-              <td>
-                <img
-                  class="img-size"
-                  src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Snow_Occasional.png"
-                  alt="SnowOccational"
-                />
-              </td>
-            </tr>
-            <br />
-            <tr>
-              <td>8C</td>
-              <td>9C</td>
-              <td>14C</td>
-              <td>17C</td>
-              <td>18C</td>
-              <td>16C</td>
-              <td>13C</td>
-            </tr>
-          </table>
+          <section class="flex-container">
+            <div class="flex-box1">
+              <p>03:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Snow_Occasional.png"
+                alt="SnowOcassional"
+              />
+              <br />
+              <p>8C</p>
+            </div>
+            <div class="flex-box2">
+              <p>06:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Snow_Occasional.png"
+                alt="SnowOcassional"
+              />
+              <br />
+              <p>9C</p>
+            </div>
+            <div class="flex-box3">
+              <p>09:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
+                alt="Sunny"
+              />
+              <br />
+              <p>14C</p>
+            </div>
+            <div class="flex-box4">
+              <p>12:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
+                alt="Sunny"
+              />
+              <br />
+              <p>17C</p>
+            </div>
+            <div class="flex-box5">
+              <p>15:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
+                alt="Sunny"
+              />
+              <br />
+              <p>18C</p>
+            </div>
+            <div class="flex-box6">
+              <p>18:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"
+                alt="Sunny"
+              />
+              <br />
+              <p>16C</p>
+            </div>
+            <div class="flex-box7">
+              <p>21:00</p>
+              <br />
+              <img
+                class="img-size"
+                src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Snow_Occasional.png"
+                alt="SnowOcassional"
+              />
+              <br />
+              <p>13C</p>
+            </div>
+          </section>
         </main>
       </div>
     );

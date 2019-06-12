@@ -43,9 +43,29 @@
   color: darkblue;
   margin: 5px;
 }
-.table {
+.flex-container {
+  display: flex;
   color: darkblue;
+  flex-direction: row;
   width: 75%;
+}
+.flex-box1 {
+  justify-content: space-around;
+}
+.flex-box2 {
+  justify-content: space-around;
+}
+.flex-box3 {
+  justify-content: space-around;
+}
+.flex-box5 {
+  justify-content: space-around;
+}
+.flex-box6 {
+  justify-content: space-around;
+}
+.flex-box7 {
+  justify-content: space-around;
 }
 .img-size {
   width: 30%;
