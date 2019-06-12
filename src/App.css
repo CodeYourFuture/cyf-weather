@@ -48,6 +48,7 @@
   color: darkblue;
   flex-direction: row;
   width: 75%;
+  text-align: center;
 }
 .flex-box1 {
   justify-content: space-around;
@@ -68,5 +69,5 @@
   justify-content: space-around;
 }
 .img-size {
-  width: 30%;
+  width: 40%;
 }
