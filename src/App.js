@@ -27,7 +27,7 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     e.preventDefault();
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
     );
     const response = await api_call.json();
     console.log(response);
@@ -62,62 +62,68 @@ class App extends React.Component {
             error={this.state.error}
           />
           <div className="weather-icons">
-            {" "}
-            <img src={clear} alt="clear" />
-            <p className="weather-type">overcast clear</p>
+            <img src={clear} height="300" width="300" alt="clear" />
+            <figcaption className="fig-caption" font-size="50px">
+              overcast clear
+            </figcaption>
           </div>
-          <div />
-          <div>
-            <h1>Tempreature:</h1>
+          <div className="weather-cast">
+            <ul>
+              <li>Tempreature:</li>
+              <li>Humidity:</li>
+              <li>Pressure:</li>
+            </ul>
           </div>
-          <div>
-            <h1>Humidity:Pressure:</h1>
+          <div className="weather-forcast">
+            <p>
+              03:00
+              <br />
+              <img src={cloudy} alt="cloudy" height="42" width="42" />
+              <br />
+              13&deg;C
+            </p>
+            <p>
+              06:00 <br />
+              <img src={drizzle} alt="drizzle" height="42" width="42" />
+              <br />
+              13&deg;C
+            </p>
+            <p>
+              09:00 <br />
+              <img src={fog} alt="fog" height="42" width="42" />
+              <br />
+              13&deg;C
+            </p>
+            <p>
+              12:00 <br />
+              <img
+                src={partlycloudy}
+                alt="partlycloudy"
+                height="42"
+                width="42"
+              />
+              <br />
+              13&deg;C
+            </p>
+            <p>
+              15:00 <br />
+              <img src={rain} alt="rain" height="42" width="42" />
+              <br />
+              13&deg;C
+            </p>
+            <p>
+              18:00 <br />
+              <img src={storm} alt="storm" height="42" width="42" />
+              <br />
+              13&deg;C
+            </p>
+            <p>
+              21:00 <br />
+              <img src={storm} alt="storm" height="42" width="42" />
+              <br />
+              13&deg;C
+            </p>
           </div>
-        </div>
-        <div className="weather-forcast">
-          <p>
-            03:00
-            <br />
-            <img src={cloudy} alt="cloudy" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
-          <p>
-            06:00 <br />
-            <img src={drizzle} alt="drizzle" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
-          <p>
-            09:00 <br />
-            <img src={fog} alt="fog" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
-          <p>
-            12:00 <br />
-            <img src={partlycloudy} alt="partlycloudy" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
-          <p>
-            15:00 <br />
-            <img src={rain} alt="rain" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
-          <p>
-            18:00 <br />
-            <img src={storm} alt="storm" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
-          <p>
-            21:00 <br />
-            <img src={storm} alt="storm" height="42" width="42" />
-            <br />
-            13&deg;C
-          </p>
         </div>
       </div>
     );

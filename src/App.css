@@ -34,11 +34,20 @@ form {
 }
 .weather-icons {
   display: grid;
-  width: 200px;
-  height: 200px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
 }
 .weather-icons p {
   font-size: 50px;
+}
+.fig-caption {
+  font-size: 50px;
+  color: whitesmoke;
+}
+.weather-cast {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .weather-forcast {
   display: grid;
@@ -47,4 +56,17 @@ form {
 .weather-type {
   color: white;
   align-content: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: grid;
+  align-items: center;
+  float: left;
+  margin: 30px;
+  font-size: 25px;
 }
