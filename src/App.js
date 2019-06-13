@@ -42,7 +42,7 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        error: "Please input search values..."
+        error: "Dummy! you either mis-spell or empty box"
       });
     }
   };
