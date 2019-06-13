@@ -4,24 +4,20 @@ class Weather extends React.Component {
   render() {
     return (
       <div className="weather-info">
-        {this.props.city && (
-          <p className="weather__key">
-            <span className="weather__value"> {this.props.city},</span>
-          </p>
-        )}
         {this.props.temperature && (
-          <p className="weather__key">
+          <h3 className="weather2__key">
+            <b>Temperature:</b>
             <span className="weather__value"> {this.props.temperature}</span>
-          </p>
+          </h3>
         )}
         {this.props.humidity && (
-          <p className="weather__key">
+          <p className="weather1__key">
             Humidity:
             <span className="weather__value"> {this.props.humidity}</span>
           </p>
         )}
         {this.props.description && (
-          <p className="weather__key">
+          <p className="weather3__key">
             Conditions:
             <span className="weather__value"> {this.props.description}</span>
           </p>

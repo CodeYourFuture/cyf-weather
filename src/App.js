@@ -42,7 +42,7 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        error: "Dummy! you either mis-spell or empty box"
+        error: "Dummy! write city name first"
       });
     }
   };
@@ -53,6 +53,12 @@ class App extends React.Component {
         <div className="form-container">
           <Form loadWeather={this.getWeather} />
         </div>
+        <div className="weather-icons">
+          <img src={clear} height="200" width="200" alt="clear" />
+          <figcaption className="fig-caption" font-size="30px">
+            overcast clear
+          </figcaption>
+        </div>
         <div className="weather-container">
           <Weather
             temperature={this.state.temperature}
@@ -61,19 +67,7 @@ class App extends React.Component {
             description={this.state.description}
             error={this.state.error}
           />
-          <div className="weather-icons">
-            <img src={clear} height="300" width="300" alt="clear" />
-            <figcaption className="fig-caption" font-size="50px">
-              overcast clear
-            </figcaption>
-          </div>
-          <div className="weather-cast">
-            <ul>
-              <li>Tempreature:</li>
-              <li>Humidity:</li>
-              <li>Pressure:</li>
-            </ul>
-          </div>
+
           <div className="weather-forcast">
             <p>
               03:00

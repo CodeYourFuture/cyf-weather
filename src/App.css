@@ -5,23 +5,30 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+
 .form-container {
   background-color: #689dda;
   height: 200px;
-  padding: 0px 0px 0px 0px;
+  font-family: Raleway;
+}
+::placeholder {
+  color: rgb(231, 220, 220);
+  font-family: Raleway;
 }
 input {
   width: 30%;
   font-size: 25px;
   background-color: #689dda;
   padding: 15px 15px 15px 15px;
-
+  color: aliceblue;
   outline: none;
+  font-family: Raleway;
 }
 button {
   font-size: 25px;
   background-color: #4f79c6;
   padding: 15px 15px 15px 15px;
+  font-family: Raleway;
 }
 form {
   padding: 50px 10px 10px 10px;
@@ -31,42 +38,45 @@ form {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   font-size: 20px;
+  font-family: Raleway;
 }
 .weather-icons {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   align-items: center;
+  font-family: Raleway;
 }
-.weather-icons p {
-  font-size: 50px;
+.weather-icons {
+  display: flex;
+  flex-direction: column;
+  font-family: Raleway;
 }
 .fig-caption {
-  font-size: 50px;
+  font-size: 30px;
   color: whitesmoke;
+  font-family: Raleway;
 }
-.weather-cast {
+/*.weather-cast {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+ 
 }
+ */
 .weather-forcast {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 250px 250px 250px 250px 250px 250px 250px;
+  align-items: stretch;
+  padding-top: 50px;
+  padding-left: 100px;
 }
 .weather-type {
   color: white;
   align-content: center;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: grid;
+.weather-info {
+  font-family: Raleway;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  float: left;
-  margin: 30px;
-  font-size: 25px;
 }
