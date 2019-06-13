@@ -1,6 +1,6 @@
 .app {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   transition: background-color 1s ease-in;
   background-color: lightskyblue;
   font-family: "Raleway";
@@ -24,6 +24,7 @@
 }
 
 /*  Search bar */
+
 .btn {
   color: darkblue;
   border: 1px solid rgb(0, 102, 255);
@@ -38,16 +39,30 @@
 .text {
   background: transparent;
   border: none;
-  border-bottom: 1px solid lightskyblue;
   color: white;
   font-size: 20px;
   outline: none;
+  position: relative;
+  left: 15px;
+}
+.text:hover {
+  border-bottom: 1px solid lightskyblue;
+}
+::placeholder {
+  color: white;
 }
 
 /* Current weather */
+.main-img {
+  width: 25%;
+}
 .flex-container1 {
   display: flex;
   flex-direction: column;
+}
+.title {
+  text-align: center;
+  color: white;
 }
 .temp {
   color: darkblue;
