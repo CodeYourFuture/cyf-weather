@@ -66,10 +66,12 @@
 }
 .temp {
   color: darkblue;
+  font-size: 20px;
 }
 .tempInfo {
   color: darkblue;
   margin: 5px;
+  font-size: 13px;
 }
 .flex-container {
   display: flex;

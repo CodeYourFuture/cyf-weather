@@ -36,15 +36,15 @@ class App extends Component {
           <img class="main-img" src={mostlycloudy} alt="mostly cloudy" />
           <h3 class="title">overcast clouds</h3>
           <section class="flex-container1">
-            <h3 class="temp">
+            <p class="temp">
               <b>Temprature</b>&nbsp;&nbsp;&nbsp;10°to 11°C&nbsp;
-            </h3>
+            </p>
 
-            <h5 class="tempInfo">
+            <p class="tempInfo">
               <br />
-              <b>Humidity&nbsp; 78%</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <b>Pressure&nbsp; 100848</b>
-            </h5>
+              <b>Humidity</b>&nbsp; 78%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <b>Pressure</b>&nbsp;100848
+            </p>
           </section>
           <br />
           <br />
