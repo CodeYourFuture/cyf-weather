@@ -3,10 +3,8 @@
   width: 100vw;
   transition: background-color 1s ease-in;
 }
-@font-face {
-  font-family: "Raleway";
-}
-.app{
+
+.app {
   display: flex;
   text-align: center;
 }
@@ -31,18 +29,35 @@
 /*  Search bar */
 .app__header {
   border: #0366d6;
-  background-color: #0366d6;
+  background-color: #759dd2;
   opacity: 30%;
   align-self: flex-start;
   flex-direction: row;
 }
+.searchbar {
+  display: flex;
+  flex-direction: row;
+}
+input {
+  background-color: #759dd2;
+  border: none;
+}
+
 button {
-  background-color: #0366d6;
+  background-color: #587ac2;
+  padding: 3%;
+  width: 130px;
+  font-size: 14px;
+  flex-wrap: nowrap;
+  border: none;
 }
 
 .app__main {
-  background-color: lightblue;
-  height: 100%;
+  background-color: #9ccdf2;
+  height: 85%;
+}
+.Todaysweather {
+  margin-bottom: 60px;
 }
 
 /* Current weather */
@@ -53,13 +68,23 @@ button {
 .currentoverview {
   width: 100%;
 }
-
-.characteristics {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 450;
+.currenttemp {
+  font-weight: 700;
 }
 
+.data-heading{
+  font-weight: 700;
+  margin-right: 2px;
+}
+.temperature {
+  margin: 22px;
+}
+.characteristics {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
 .upcoming {
   display: flex;
   justify-content: center;

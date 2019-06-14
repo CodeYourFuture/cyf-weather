@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./grid.css";
 import clear from "./img/weather-icons/clear.svg";
 import cloudy from "./img/weather-icons/cloudy.svg";
 import drizzle from "./img/weather-icons/drizzle.svg";
@@ -7,6 +8,13 @@ import fog from "./img/weather-icons/fog.svg";
 import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
 import partlycloudy from "./img/weather-icons/partlycloudy.svg";
 import rain from "./img/weather-icons/rain.svg";
+import weather from "./data/weather.json";
+
+const forecast8 = weather.list.slice(0, 7).map(function(item) {
+  return item.weather[0], ;
+});
+
+// create an object that contains things i need to access and access them via the properties eg: .
 
 class App extends Component {
   constructor(props) {
@@ -21,65 +29,39 @@ class App extends Component {
           <header className="app__header">
             <div className="searchbar">
               <input className="Search" />
-              <button>Find Weather</button>
+              <button>FIND WEATHER</button>
             </div>
           </header>
 
           <main className="app__main">
-            <div className="Todays weather">
-              <div className="current Weather">
+            <div className="Todaysweather">
+              <div className="currentWeather">
                 <img className="currentoverview" src={partlycloudy} />
-                <div className="overview">overcast clouds </div>
-                <h4 className="current temp">Temperature 10 to 11c</h4>
+                <div className="overview">overcast clouds</div>
+                <div className="temperature">
+                  <span className="data-heading"> Temperature</span> 10 to 11c
+                </div>
                 <div className="characteristics">
-                  <h6 className="humidity "> <b>Humidity </b>78%</h6>
-                  <h6 className="pressure"><strong>Pressure</strong> 1008.48></h6>
+                  <div>
+                    <span className="data-heading"> Humidity</span> 78%
+                  </div>
+                  <div>
+                    <span className="data-heading">Pressure</span> 1008.48
+                  </div>
                 </div>
               </div>
             </div>
-
+            {/* //transform array into a markup. */}
             <div className="upcoming">
-              <div>
-                <div className="time">3:00 </div>
-                <img src={clear} />
-                <div className="degree">9c</div>
-              </div>
-
-              <div>
-                <div className="time">06:00</div>
-                <img src={cloudy} />
-                <div className="degree">9c</div>
-              </div>
-
-              <div>
-                <div className="time">09:00</div>
-                <img src={drizzle} />
-                <div className="degree">9c</div>
-              </div>
-
-              <div>
-                <div className="time">12:00</div>
-                <img src={fog} />
-                <div className="degree">9c</div>
-              </div>
-
-              <div>
-                <div className="time">15:00</div>
-                <img src={mostlycloudy} />
-                <div className="degree">9c</div>
-              </div>
-
-              <div>
-                <div className="time">18:00</div>
-                <img src={partlycloudy} />
-                <div className="degree">9c</div>
-              </div>
-
-              <div>
-                <div className="time">21:00</div>
-                <img src={rain} />
-                <div className="degree">9c</div>
-              </div>
+              {forecast8.map(function(forecast) {
+                return (
+                  <div>
+                    <div className="time">{forecast.description} </div>
+                    <img src={clear} />
+                    <div className="degree">9c</div>
+                  </div>
+                );
+              })}
             </div>
           </main>
         </div>
