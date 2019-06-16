@@ -11,7 +11,10 @@ import rain from "./img/weather-icons/rain.svg";
 import weather from "./data/weather.json";
 
 const forecast8 = weather.list.slice(0, 7).map(function(item) {
-  return item.weather[0], ;
+  return {
+    dt: new Date(item.dt * 1000),
+    tempKF: item.main.temp_kf
+  };
 });
 
 // create an object that contains things i need to access and access them via the properties eg: .
@@ -51,14 +54,16 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            {/* //transform array into a markup. */}
+
             <div className="upcoming">
               {forecast8.map(function(forecast) {
                 return (
                   <div>
-                    <div className="time">{forecast.description} </div>
+                    <div className="time">
+                      {forecast.dt.getHours() + ":" + forecast.dt.getMinutes()}
+                      netlify deploy --prod</div>
                     <img src={clear} />
-                    <div className="degree">9c</div>
+                    <div className="degree">{forecast.temp_kf}</div>
                   </div>
                 );
               })}
@@ -71,3 +76,7 @@ class App extends Component {
 }
 
 export default App;
+
+{
+  /* // <div className="time">9:00</div> */
+}
