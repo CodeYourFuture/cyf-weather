@@ -49,24 +49,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="main-App">
-        <div className="form-container">
-          <Form loadWeather={this.getWeather} />
-        </div>
-        <div className="weather-icons">
-          <img src={clear} height="200" width="200" alt="clear" />
-          <figcaption className="fig-caption" font-size="30px">
-            overcast clear
-          </figcaption>
-        </div>
-        <div className="weather-container">
-          <Weather
-            temperature={this.state.temperature}
-            city={this.state.city}
-            humidity={this.state.humidity}
-            description={this.state.description}
-            error={this.state.error}
-          />
+      <div className="flex-container">
+        <div className="main-App">
+          <div className="form-container">
+            <Form loadWeather={this.getWeather} />
+          </div>
+          <div className="weather-icons">
+            <img src={clear} height="200" width="200" alt="clear" />
+            <figcaption className="fig-caption" font-size="30px">
+              overcast clear
+            </figcaption>
+          </div>
+          <div className="weather-container">
+            <Weather
+              temperature={this.state.temperature}
+              city={this.state.city}
+              humidity={this.state.humidity}
+              description={this.state.description}
+              error={this.state.error}
+            />
+          </div>
 
           <div className="weather-forcast">
             <p>

@@ -2,6 +2,28 @@ import React from "react";
 
 class Weather extends React.Component {
   render() {
+    function getWeatherMessage(weatherId) {
+      if (weatherId < 300) {
+        return "drizzle - welcome to london!";
+      } else if (weatherId === 300) {
+        return "stormy - stay indoors!";
+      } else if (weatherId > 300 && weatherId <= 499) {
+        return "rain - I love london summer!";
+      } else if (weatherId >= 500 && weatherId <= 599) {
+        return "snow - do you want to build a snowman?";
+      } else if (weatherId >= 600 && weatherId <= 699) {
+        return "fog - who said that?  where are you?";
+      } else if (weatherId >= 700 && weatherId <= 799) {
+        return "clear - the rain has gone!";
+      } else if (weatherId === 800) {
+        return "clear - the rain has gone!";
+      } else if (weatherId === 801) {
+        return "partlycloudy - the glass is half-full";
+      } else if (weatherId >= 802 && weatherId <= 805) {
+        return "mostlycloudy - the glass is half-full of rain-water";
+      }
+    }
+
     return (
       <div className="weather-info">
         {this.props.temperature && (
