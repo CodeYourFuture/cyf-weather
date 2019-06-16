@@ -72,7 +72,7 @@ button {
   font-weight: 700;
 }
 
-.data-heading{
+.data-heading {
   font-weight: 700;
   margin-right: 2px;
 }
@@ -88,7 +88,11 @@ button {
 .upcoming {
   display: flex;
   justify-content: center;
+  width: 70%;
+  font-size: 14px;
 }
 img {
-  width: 50%;
+  width: 60%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
