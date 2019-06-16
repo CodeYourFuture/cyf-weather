@@ -56,15 +56,14 @@
 
 .app_main {
   background-color: #9ccdf2;
-  height: 100%;
   align-items: center;
 }
 
 .main_pic .main_pic_icon {
   display: flex;
-  width: 70%;
+  width: 100%;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .main_pic {
   display: flex;
@@ -106,7 +105,7 @@
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  margin: 50px;
+  margin: 10px;
   justify-content: space-around;
 }
 
@@ -114,14 +113,14 @@
 .icon {
   width: 90px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .time {
   font-family: Raleway;
   font-size: 14px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .degree {
