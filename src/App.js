@@ -9,11 +9,12 @@ import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
 import partlycloudy from "./img/weather-icons/partlycloudy.svg";
 import rain from "./img/weather-icons/rain.svg";
 import weather from "./data/weather.json";
+import moment from "moment";
 
-const forecast8 = weather.list.slice(0, 7).map(function(item) {
+const forecast8 = weather.list.map(function(item) {
   return {
-    dt: new Date(item.dt * 1000),
-    tempKF: item.main.temp_kf
+    dt: moment(item.dt * 1000),
+    temp: Math.floor(item.main.temp) + "°C"
   };
 });
 
@@ -59,11 +60,9 @@ class App extends Component {
               {forecast8.map(function(forecast) {
                 return (
                   <div>
-                    <div className="time">
-                      {forecast.dt.getHours() + ":" + forecast.dt.getMinutes()}
-                      netlify deploy --prod</div>
+                    <div className="time">{forecast.dt.format("hh:mm")}</div>
                     <img src={clear} />
-                    <div className="degree">{forecast.temp_kf}</div>
+                    <div className="degree">{forecast.temp}</div>
                   </div>
                 );
               })}
