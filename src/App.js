@@ -2,10 +2,10 @@ import React from "react";
 import Weather from "./components/Weather";
 import Form from "./components/Form";
 import "./App.css";
-import clear from "./img/weather-icons/clear.svg";
+
 import Forecast from "./components/Forecast";
 
-const Api_Key = "8d2de98e089f1c28e1a22fc19a24ef04";
+const API_KEY = "8d2de98e089f1c28e1a22fc19a24ef04";
 
 class App extends React.Component {
   state = {
@@ -13,7 +13,10 @@ class App extends React.Component {
     city: undefined,
     humidity: undefined,
     pressure: undefined,
-    error: undefined
+    hour: undefined,
+    icon: undefined,
+    error: undefined,
+    description: undefined
   };
 
   // i use getWeather is a method to make the api call
@@ -21,8 +24,7 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     e.preventDefault();
     const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric
-&appid=${Api_Key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
     const response = await api_call.json();
     console.log(response);
@@ -33,6 +35,9 @@ class App extends React.Component {
 
         humidity: response.main.humidity,
         pressure: response.main.pressure,
+        hour: response.dt_txt,
+        icon: response.weather[0].icon,
+        description: response.weather[0].description,
         error: ""
       });
     } else {
@@ -47,13 +52,7 @@ class App extends React.Component {
       <div className="flex-container">
         <div className="main-App">
           <div className="form-container">
-            <Form loadWeather={this.getWeather} />
-          </div>
-          <div className="weather-icons">
-            <img src={clear} height="200" width="200" alt="clear" />
-            <figcaption className="fig-caption" font-size="30px">
-              overcast clear
-            </figcaption>
+            <Form getWeather={this.getWeather} />
           </div>
 
           <div className="weather-container">
@@ -62,7 +61,10 @@ class App extends React.Component {
               city={this.state.city}
               humidity={this.state.humidity}
               pressure={this.state.pressure}
+              hour={this.state.hour}
+              icon={this.state.icon}
               error={this.state.error}
+              description={this.state.description}
             />
           </div>
         </div>
