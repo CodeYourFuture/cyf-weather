@@ -1,0 +1,32 @@
+{
+  "dt": 1560070800,
+  "main": {
+    "temp": 19.45,
+    "temp_min": 15.58,
+    "temp_max": 19.45,
+    "pressure": 1021.34,
+    "sea_level": 1021.34,
+    "grnd_level": 1016.71,
+    "humidity": 54,
+    "temp_kf": 3.87
+  },
+  "weather": [
+    {
+      "id": 802,
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "icon": "03d"
+    }
+  ],
+  "clouds": {
+    "all": 46
+  },
+  "wind": {
+    "speed": 2.92,
+    "deg": 223.585
+  },
+  "sys": {
+    "pod": "d"
+  },
+  "dt_txt": "2019-06-09 09:00:00"
+}

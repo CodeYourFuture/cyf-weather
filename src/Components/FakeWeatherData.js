@@ -7,10 +7,12 @@ class FakeWeatherData extends Component {
     this.state = {};
   }
   render() {
+    console.log(FakeWeather);
+
     return (
       <div>
-        {FakeWeather.map((weather, index) => {
-          return <h1>{weather.main}</h1>;
+        {FakeWeather.list.map((element, index) => {
+          return <p>{element.weather[0].main} </p>;
         })}
       </div>
     );
