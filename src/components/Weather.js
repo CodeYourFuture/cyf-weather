@@ -6,7 +6,11 @@ class Weather extends React.Component {
       <div className="weather-info">
         {this.props.icon && (
           <div>
-            <img className="img-icons" alt="icns" src={this.props.icon} />
+            <img
+              className="img-icons"
+              alt="icons"
+              src={`http://openweathermap.org/img/w/${this.props.icon}.png`}
+            />
           </div>
         )}
         <div className="description-info">
@@ -23,7 +27,6 @@ class Weather extends React.Component {
             <span>&#8451;</span>.
           </h3>
         )}
-
         <div className="weather-info2">
           {this.props.humidity && (
             <p className="weather1__key">
@@ -38,7 +41,6 @@ class Weather extends React.Component {
             </p>
           )}{" "}
         </div>
-
         {this.props.error && (
           <p className="weather__error">{this.props.error}</p>
         )}

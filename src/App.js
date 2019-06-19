@@ -1,20 +1,23 @@
 import React from "react";
+
 import Weather from "./components/Weather";
 import Form from "./components/Form";
 import "./App.css";
 
-import Forecast from "./components/Forecast";
+import ForeCast from "./components/foreCast.js";
 
-const API_KEY = "014c730fd22445199fd213403191806";
+const API_KEY = "75d8aff5474fea6a3b1c8921b0f1d35d";
 
 class App extends React.Component {
   state = {
-    temp_c: undefined,
+    temp: undefined,
+    temperature: undefined,
     city: undefined,
     humidity: undefined,
     pressure: undefined,
     hour: undefined,
     icon: undefined,
+
     error: undefined,
     condition: undefined
   };
@@ -24,25 +27,44 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     e.preventDefault();
     const api_call = await fetch(
-      `http://api.apixu.com/v1/current.json?key=${API_KEY}&q=${city}` &&
-        `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${city}`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=8&units=metric&appid=${API_KEY}`
     );
+
     const response = await api_call.json();
     console.log(response);
-    if (city) {
-      this.setState({
-        temperature: response.current.temp_c,
-        hour: response.forecast.forecastday[0].astro,
-        humidity: response.current.humidity,
-        pressure: response.current.pressure_mb,
 
-        icon: response.current.condition.icon,
-        condition: response.current.condition.text,
+    if (response.list) {
+      this.setState({
+        temperature: response.list[0].main.temp,
+        humidity: response.list[0].main.humidity,
+        pressure: response.list[0].main.pressure,
+        icon: response.list[0].weather[0].icon,
+        time: response.list[1].dt_txt,
+        temp: response.list[1].main.temp,
+        icn: response.list[1].weather[0].icon,
+        time: response.list[2].dt_txt,
+        temp: response.list[2].main.temp,
+        icn: response.list[2].weather[0].icon,
+        time: response.list[3].dt_txt,
+        temp: response.list[3].main.temp,
+        icn: response.list[3].weather[0].icon,
+        time: response.list[4].dt_txt,
+        temp: response.list[4].main.temp,
+        icn: response.list[4].weather[0].icon,
+        time: response.list[5].dt_txt,
+        temp: response.list[5].main.temp,
+        icn: response.list[5].weather[0].icon,
+        time: response.list[6].dt_txt,
+        temp: response.list[6].main.temp,
+        icn: response.list[6].weather[0].icon,
+        time: response.list[7].dt_txt,
+        temp: response.list[7].main.temp,
+        icn: response.list[7].weather[0].icon,
         error: ""
       });
     } else {
       this.setState({
-        error: "Dummy! write city name first"
+        error: "no data found, check your spelling please!!"
       });
     }
   };
@@ -66,14 +88,16 @@ class App extends React.Component {
             />
           </div>
         </div>
-        <Forecast
-          temperature={this.state.temperature}
-          hour={this.state.hour}
-          city={this.state.city}
-          icon={this.state.icon}
-        />
+        <div class-name="forecast-container">
+          <ForeCast
+            time={this.state.time}
+            icn={this.state.icn}
+            temp={this.state.temp}
+          />
+        </div>
       </div>
     );
   }
 }
+
 export default App;
