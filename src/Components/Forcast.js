@@ -27,48 +27,48 @@ class Forcast extends Component {
             <br />
             <p class="temprature">{this.props.temprature}</p>
           </div>
-          {/*<div class="flex-box2">
+          <div class="flex-box1">
             <p>06:00</p>
             <br />
             <img class="img-size" src={mostlycloudy} alt="mostlyCloudy" />
             <br />
             <p>9°C</p>
           </div>
-          <div class="flex-box3">
+          <div class="flex-box1">
             <p>09:00</p>
             <br />
             <img class="img-size" src={clear} alt="Sunny" />
             <br />
             <p>14°C</p>
           </div>
-          <div class="flex-box4">
+          <div class="flex-box1">
             <p>12:00</p>
             <br />
             <img class="img-size" src={clear} alt="Sunny" />
             <br />
             <p>17°C</p>
           </div>
-          <div class="flex-box5">
+          <div class="flex-box1">
             <p>15:00</p>
             <br />
             <img class="img-size" src={clear} alt="Sunny" />
             <br />
             <p>18°C</p>
           </div>
-          <div class="flex-box6">
+          <div class="flex-box1">
             <p>18:00</p>
             <br />
             <img class="img-size" src={clear} alt="Sunny" />
             <br />
             <p>16°C</p>
           </div>
-          <div class="flex-box7">
+          <div class="flex-box1">
             <p>21:00</p>
             <br />
             <img class="img-size" src={mostlycloudy} alt="mostlycloudy" />
             <br />
             <p>13°C</p>
-    </div>*/}
+          </div>
         </section>
       </main>
     );
