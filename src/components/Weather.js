@@ -6,15 +6,15 @@ class Weather extends React.Component {
       <div className="weather-info">
         {this.props.icon && (
           <div>
-            <img
-              className="img-icons"
-              alt="icns"
-              src={`http://openweathermap.org/img/w/${this.props.icon}.png`}
-            />
+            <img className="img-icons" alt="icns" src={this.props.icon} />
           </div>
         )}
         <div className="description-info">
-          {this.props.description && <h3>{this.props.description}</h3>}
+          {this.props.condition && (
+            <h3 className="weather2__key">
+              <span className="weather__value1"> {this.props.condition}</span>
+            </h3>
+          )}
         </div>
         {this.props.temperature && (
           <h3 className="weather2__key">

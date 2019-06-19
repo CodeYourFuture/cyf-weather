@@ -5,18 +5,18 @@ import "./App.css";
 
 import Forecast from "./components/Forecast";
 
-const API_KEY = "8d2de98e089f1c28e1a22fc19a24ef04";
+const API_KEY = "014c730fd22445199fd213403191806";
 
 class App extends React.Component {
   state = {
-    temperature: undefined,
+    temp_c: undefined,
     city: undefined,
     humidity: undefined,
     pressure: undefined,
     hour: undefined,
     icon: undefined,
     error: undefined,
-    description: undefined
+    condition: undefined
   };
 
   // i use getWeather is a method to make the api call
@@ -24,20 +24,20 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     e.preventDefault();
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      `http://api.apixu.com/v1/current.json?key=${API_KEY}&q=${city}` &&
+        `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${city}`
     );
     const response = await api_call.json();
     console.log(response);
     if (city) {
       this.setState({
-        temperature: response.main.temp,
-        city: response.name,
+        temperature: response.current.temp_c,
+        hour: response.forecast.forecastday[0].astro,
+        humidity: response.current.humidity,
+        pressure: response.current.pressure_mb,
 
-        humidity: response.main.humidity,
-        pressure: response.main.pressure,
-        hour: response.dt_txt,
-        icon: response.weather[0].icon,
-        description: response.weather[0].description,
+        icon: response.current.condition.icon,
+        condition: response.current.condition.text,
         error: ""
       });
     } else {
@@ -58,17 +58,20 @@ class App extends React.Component {
           <div className="weather-container">
             <Weather
               temperature={this.state.temperature}
-              city={this.state.city}
               humidity={this.state.humidity}
               pressure={this.state.pressure}
-              hour={this.state.hour}
               icon={this.state.icon}
               error={this.state.error}
-              description={this.state.description}
+              condition={this.state.condition}
             />
           </div>
         </div>
-        <Forecast />
+        <Forecast
+          temperature={this.state.temperature}
+          hour={this.state.hour}
+          city={this.state.city}
+          icon={this.state.icon}
+        />
       </div>
     );
   }
