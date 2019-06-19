@@ -9,7 +9,8 @@ import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
 import Forcast from "./Components/Forcast";
 import SearchBar from "./Components/SearchBar";
 import CurrentWeather from "./Components/CurrentWeather";
-import FakeWeather from "./data/FakeWeather.json";
+//import FakeWeather from "./data/FakeWeather.json";
+import FakeWeatherData from "./Components/FakeWeatherData";
 import "./App.css";
 import "./grid.css";
 // import SearchBar from "./Components/SearchBar";
@@ -26,8 +27,9 @@ class App extends Component {
       <section>
         <SearchBar buttonTitle="searchCity" />
         <CurrentWeather />
+        <FakeWeatherData />
+
         <Forcast time="3:00" imgSrc={mostlycloudy} temprature="8°C" />
-        <FakeWeather />
       </section>
     );
   }
