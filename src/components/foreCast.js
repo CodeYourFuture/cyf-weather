@@ -33,6 +33,7 @@ class foreCast extends React.Component {
                 {this.props.temp && (
                   <h3 className="weather2__key">
                     <span className="weather__value1"> {this.props.temp}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
@@ -43,21 +44,21 @@ class foreCast extends React.Component {
           <ul>
             <li>
               <div className="forecast-icn">
-                {this.props.time && (
+                {this.props.time1 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.time}</span>
+                    <span className="weather__value1"> {this.props.time1}</span>
                   </h3>
                 )}
               </div>
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.icn1 && (
                   <img
                     className="img-icons"
                     alt="icons"
                     src={`http://openweathermap.org/img/w/${
-                      this.props.icn
+                      this.props.icn1
                     }.png`}
                   />
                 )}
@@ -65,9 +66,10 @@ class foreCast extends React.Component {
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.temp1 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.temp}</span>
+                    <span className="weather__value1"> {this.props.temp1}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
@@ -78,21 +80,21 @@ class foreCast extends React.Component {
           <ul>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.time2 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.time}</span>
+                    <span className="weather__value1"> {this.props.time2}</span>
                   </h3>
                 )}
               </div>
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.icn2 && (
                   <img
                     className="img-icons"
                     alt="icons"
                     src={`http://openweathermap.org/img/w/${
-                      this.props.icn
+                      this.props.icn2
                     }.png`}
                   />
                 )}
@@ -100,9 +102,10 @@ class foreCast extends React.Component {
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.temp2 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.temp}</span>
+                    <span className="weather__value1"> {this.props.temp2}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
@@ -113,21 +116,21 @@ class foreCast extends React.Component {
           <ul>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.time3 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.time}</span>
+                    <span className="weather__value1"> {this.props.time3}</span>
                   </h3>
                 )}
               </div>
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.icn3 && (
                   <img
                     className="img-icons"
                     alt="icons"
                     src={`http://openweathermap.org/img/w/${
-                      this.props.icn
+                      this.props.icn3
                     }.png`}
                   />
                 )}
@@ -135,9 +138,10 @@ class foreCast extends React.Component {
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.temp3 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.temp}</span>
+                    <span className="weather__value1"> {this.props.temp3}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
@@ -148,21 +152,21 @@ class foreCast extends React.Component {
           <ul>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.time4 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.time}</span>
+                    <span className="weather__value1"> {this.props.time4}</span>
                   </h3>
                 )}
               </div>
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.icn4 && (
                   <img
                     className="img-icons"
                     alt="icons"
                     src={`http://openweathermap.org/img/w/${
-                      this.props.icn
+                      this.props.icn4
                     }.png`}
                   />
                 )}
@@ -170,9 +174,10 @@ class foreCast extends React.Component {
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.temp4 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.temp}</span>
+                    <span className="weather__value1"> {this.props.temp4}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
@@ -183,21 +188,21 @@ class foreCast extends React.Component {
           <ul>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.time5 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.time}</span>
+                    <span className="weather__value1"> {this.props.time5}</span>
                   </h3>
                 )}
               </div>
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.icn5 && (
                   <img
                     className="img-icons"
                     alt="icons"
                     src={`http://openweathermap.org/img/w/${
-                      this.props.icn
+                      this.props.icn5
                     }.png`}
                   />
                 )}
@@ -205,9 +210,10 @@ class foreCast extends React.Component {
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.temp5 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.temp}</span>
+                    <span className="weather__value1"> {this.props.temp5}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
@@ -218,21 +224,21 @@ class foreCast extends React.Component {
           <ul>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.time6 && (
                   <h3 className="weather2__key">
-                    <span className="weather__value1"> {this.props.time}</span>
+                    <span className="weather__value1"> {this.props.time6}</span>
                   </h3>
                 )}
               </div>
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.icn6 && (
                   <img
                     className="img-icons"
                     alt="icons"
                     src={`http://openweathermap.org/img/w/${
-                      this.props.icn
+                      this.props.icn6
                     }.png`}
                   />
                 )}
@@ -240,10 +246,10 @@ class foreCast extends React.Component {
             </li>
             <li>
               <div className="forecast-icn">
-                {this.props.temp && (
+                {this.props.temp6 && (
                   <h3 className="weather2__key">
-                    temp:
-                    <span className="weather__value1"> {this.props.temp}</span>
+                    <span className="weather__value1"> {this.props.temp6}</span>
+                    <span>&#8451;</span>
                   </h3>
                 )}
               </div>
