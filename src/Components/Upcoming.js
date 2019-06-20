@@ -39,7 +39,9 @@ const getWeatherIcon = weatherId => {
     return partlycloudy;
   } else if (weatherId > 801 && weatherId < 805) {
     return mostlycloudy;
-  }
+  } else {
+   return "weather update not avaliable";
+  } 
 };
 
 const Upcoming = () => {

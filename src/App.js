@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./grid.css";
+//import weather from "../data/weather.json";
 import Search from "./Components/Search";
 import CurrentWeather from "./Components/CurrentWeather";
 import Upcoming from "./Components/Upcoming";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      // weather: weather
+    };
   }
 
-render() {
+  render() {
     return (
       <div className="app">
         <div className="container">
@@ -28,7 +30,3 @@ render() {
 }
 
 export default App;
-
-{
-  /* // <div className="time">9:00</div> */
-}
