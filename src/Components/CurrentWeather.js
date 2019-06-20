@@ -1,20 +1,27 @@
 import React from "react";
 import partlycloudy from "../img/weather-icons/partlycloudy.svg";
+import getWeatherIcon from "../utilities/getWeatherIcon";
 
-const CurrentWeather = () => {
+const CurrentWeather = props => {
   return (
     <div className="Todaysweather">
-      <img className="currentoverview" src={partlycloudy} />
+      <img
+        className="currentoverview"
+        src={getWeatherIcon(props.weather.list[0].weather[0].id)}
+      />
       <div className="overview">overcast clouds</div>
       <div className="temperature">
-        <span className="data-heading"> Temperature</span> 10 to 11°C
+        <span className="data-heading"> Temperature</span>{" "}
+        {props.weather.list[0].main.temp}
       </div>
       <div className="characteristics">
         <div>
-          <span className="data-heading"> Humidity</span> 78%
+          <span className="data-heading"> Humidity</span>{" "}
+          {props.weather.list[0].main.humidity}
         </div>
         <div>
-          <span className="data-heading">Pressure</span> 1008.48
+          <span className="data-heading">Pressure</span>{" "}
+          {props.weather.list[0].main.pressure}
         </div>
       </div>
     </div>
@@ -22,3 +29,5 @@ const CurrentWeather = () => {
 };
 
 export default CurrentWeather;
+
+//line4: give data as parameter.
