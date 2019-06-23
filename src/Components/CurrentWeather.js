@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import mostlycloudy from "../img/weather-icons/mostlycloudy.svg";
+
 import "../App.css";
 class CurrentWeather extends Component {
   constructor(props) {
@@ -7,7 +7,6 @@ class CurrentWeather extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.icons(this.props.weatherNow.weather[0].id));
     return (
       <main className="currentWeather">
         <img
@@ -18,7 +17,9 @@ class CurrentWeather extends Component {
         <h3 class="title">overcast clouds</h3>
         <section class="flex-container1">
           <p class="temp">
-            <b>Temprature</b>&nbsp;&nbsp;&nbsp;{this.props.weatherNow.main.temp}
+            <b>Temprature</b>&nbsp;&nbsp;&nbsp;
+            {this.props.weatherNow.main.temp_min + " to "}
+            {this.props.weatherNow.main.temp_max + "°C"}
             &nbsp;
           </p>
 

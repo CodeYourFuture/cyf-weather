@@ -49,11 +49,18 @@ class App extends Component {
         <CurrentWeather
           weatherNow={fakeWeather.list[0]}
           icons={id => {
-            this.getIcons(id);
+            return this.getIcons(id);
           }}
         />
 
-        <Forcast time="3:00" imgSrc={mostlycloudy} temprature="8°C" />
+        <Forcast
+          list={fakeWeather.list}
+          imgSrc={mostlycloudy}
+          temprature="8°C"
+          icons={id => {
+            return this.getIcons(id);
+          }}
+        />
       </section>
     );
   }
