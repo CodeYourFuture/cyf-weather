@@ -12,6 +12,9 @@ import storm from '../img/weather-icons/storm.svg';
 import unknown from '../img/weather-icons/unknown.svg';
 
 class WeatherForecast extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
         <div className="app_main">

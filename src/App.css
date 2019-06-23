@@ -30,7 +30,7 @@
   
 }
 .inputBar {
-  color: white;
+  /* color: white; */
   background-color: #759dd2;
   font-family: Raleway;
   font-size: 16px;
@@ -38,6 +38,7 @@
   border: none;
   border-bottom:thin solid whitesmoke;
 }
+
 
 .btn {
   font-family: Raleway;
@@ -69,7 +70,7 @@
   display: flex;
   justify-content: center;
 }
-.overcast {
+.now {
   font-family: Raleway;
   font-size: 16px;
   color: white;
