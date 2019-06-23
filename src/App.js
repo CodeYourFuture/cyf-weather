@@ -57,6 +57,28 @@ class App extends Component {
   };
 
   //response: what the user typed.
+  shadesOfBlue(weatherId) {
+    if (weatherId < 300) {
+      //TODO: this is not complete - it ALWAYS returns the same thing!
+      return "#1B4F72";
+    } else if (weatherId < 499) {
+      return "#2E86C1";
+    } else if (weatherId < 599) {
+      return "#2E86C1";
+    } else if (weatherId < 699) {
+      return "#1B4F72";
+    } else if (weatherId < 799) {
+      return "#85C1E9";
+    } else if (weatherId === 800) {
+      return "#D6EAF8";
+    } else if (weatherId === 801) {
+      return "#85C1E9";
+    } else if (weatherId > 801 && weatherId < 805) {
+      return "#85C1E9";
+    } else {
+      return "weather update not avaliable";
+    }
+  }
 
   render() {
     // console.log(this.state);
@@ -71,7 +93,14 @@ class App extends Component {
           {this.state.err ? (
             <div className="app__main"> {this.state.err} </div>
           ) : (
-            <main className="app__main">
+            <main
+              className="app__main"
+              style={{
+                backgroundColor: this.shadesOfBlue(
+                  this.state.weather.list[0].weather[0].id
+                )
+              }}
+            >
               <CurrentWeather weather={this.state.weather} />
               <Upcoming weather={this.state.weather} />
             </main>
@@ -87,3 +116,5 @@ export default App;
 //if fetch is in the app then its avaliable to all and its result can be passed via props. howver if the handleclick etc was in search component we hhave to pass them as functions to app.
 //the json is one citys data over 8 days. the api is gettin data from the srver for other citys and the server is updated by something else.
 //unmount auto unmounts when state changes. unless a setinterval then it needs to explicitly needs to unmount.
+//if there is an error then line 72 if not then display components.
+//default when page loads component did mount. next

@@ -14,16 +14,16 @@ const getWeatherIcon = weatherId => {
     //TODO: this is not complete - it ALWAYS returns the same thing!
     return storm;
   } else if (weatherId < 499) {
-    return drizzle;
+    return drizzle ;
   } else if (weatherId < 599) {
     return rain;
   } else if (weatherId < 699) {
     return snow;
   } else if (weatherId < 799) {
     return fog;
-  } else if (weatherId == 800) {
+  } else if (weatherId === 800) {
     return clear;
-  } else if (weatherId == 801) {
+  } else if (weatherId === 801) {
     return partlycloudy;
   } else if (weatherId > 801 && weatherId < 805) {
     return mostlycloudy;
