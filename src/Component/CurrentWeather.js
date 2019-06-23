@@ -12,18 +12,16 @@ import storm from '../img/weather-icons/storm.svg';
 import unknown from '../img/weather-icons/unknown.svg';
 
 class CurrentWeather extends Component {
-
   constructor(props) {
     super(props);
   }
   render() {
-    
+    console.log(this.props);
     return (
       <div>
         <main className="app_main">
           <div className="main_pic">
-            
-            <img 
+            <img
               src={partlycloudy}
               alt="partlycloudy"
               height="200"
@@ -31,9 +29,9 @@ class CurrentWeather extends Component {
               className="main_pic_icon"
             />
           </div>
-          <div className="now">Overcast Cloud</div>
+          <div className="now">{this.props.condition}</div>
           <div className="temp">
-            Temprature <span className="digit">{this.props.temprature}</span>
+            temperature <span className="digit">{this.props.temperature}</span>
           </div>
 
           <div className="humidity_pressure">

@@ -15,106 +15,23 @@ class WeatherForecast extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
+    console.log(this.props);
     return (
-        <div className="app_main">
+      <div className="app_main">
         <div className="twentyfour_hours  md-col-7 ">
           <div>
-            <div className="time">03:00</div>
-            <div>
-              <img
-                src={partlycloudy}
-                alt="partlycloudy"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">8°C</div>
-          </div>
-
-          <div>
-            <div className="time">06:00</div>
-            <div>
-              <img
-                src={partlycloudy}
-                alt="partlycloudy"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">9°C</div>
-          </div>
-
-          <div>
-            <div className="time">09:00</div>
-            <div>
-              <img
-                src={clear}
-                alt="clear"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">14°C</div>
-          </div>
-
-          <div>
-            <div className="time">12:00</div>
-            <div>
-              <img
-                src={clear}
-                alt="clear"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">17°C</div>
-          </div>
-
-          <div>
-            <div className="time">15:00</div>
-            <div>
-              <img
-                src={clear}
-                alt="clear"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">18°C</div>
-          </div>
-
-          <div>
-            <div className="time">18:00</div>
-            <div>
-              <img
-                src={clear}
-                alt="clear"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">16°C</div>
-          </div>
-
-          <div>
-            <div className="time">21:00</div>
-            <div>
-              <img
-                src={partlycloudy}
-                alt="partlycloudy"
-                height="150"
-                width="150"
-                className="icon"
-              />
-            </div>
-            <div className="degree">13°C</div>
+            {this.props.data.list.map((item, i) => {
+              return (
+                <div key={i}>
+                  <span className="time">{item.dt}</span>
+                  <img className="icon" src={'icon'} alt="icon" />
+                  <span className="degree">{item.main.temp}</span>
+                </div>
+              );
+            })}
+            ;
           </div>
         </div>
       </div>

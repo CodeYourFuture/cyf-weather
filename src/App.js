@@ -11,12 +11,11 @@ class App extends Component {
     this.inputRef = React.createRef();
     this.state = {
       temp: undefined,
-      temprature: undefined,
+      temperature: undefined,
       humidity: undefined,
       pressure: undefined,
-
-      error: undefined,
-      codition: undefined
+      codition: undefined,
+      error: undefined
     };
   }
   searchForWeather = () => {
@@ -29,22 +28,19 @@ class App extends Component {
         console.log(data);
         if (data) {
           this.setState({
+            allData: data,
             temperature: data.list[0].main.temp,
             humidity: data.list[0].main.humidity,
             pressure: data.list[0].main.pressure,
             condition: data.list[0].weather[0].description
           });
+        } else {
+          this.setState({
+            error: 'please check your spelling'
+          });
         }
       });
-    console.log('i started to search for weather');
   };
-
-  //  else (
-  //   this.setState({
-  //     error: "please check your spelling"
-  //     )
-  //   }
-  // )
 
   render() {
     return (
@@ -60,22 +56,16 @@ class App extends Component {
               FIND WEATHER
             </button>
           </header>
-        </div>{' '}
+        </div>
         <CurrentWeather
-          temprature={this.state.temperature}
+          temperature={this.state.temperature}
           humidity={this.state.humidity}
-          presure={this.state.pressure}
-          condition={this.state.codition}
+          pressure={this.state.pressure}
+          condition={this.state.condition}
         />
-        <WeatherForecast
-          temprature={this.state.temperature}
-          humidity={this.state.humidity}
-          presure={this.state.pressure}
-          condition={this.state.codition}
-        />
+        <WeatherForecast data={this.state.allData} />
       </div>
     );
   }
 }
-
 export default App;
