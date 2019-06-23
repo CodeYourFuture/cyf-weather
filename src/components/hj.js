@@ -9,8 +9,8 @@ if (city) {
 }
 
 <div>
-  {FakeData.list.map((fakeDetails, index) => {
-    return <h1> {fakeDetails.weather[0].icon}</h1>;
+  {response.list.map((item, index) => {
+    return <h1>{item.weather[0].icon}</h1>;
   })}
   ;
 </div>;

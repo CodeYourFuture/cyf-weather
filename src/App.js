@@ -33,7 +33,9 @@ class App extends React.Component {
     console.log(response);
 
     if (response.list) {
-      this.setState({ weatherData: response });
+      this.setState({
+        weatherData: response
+      });
     } else {
       this.setState({
         error: "no response found, check your spelling please!!"
@@ -49,15 +51,10 @@ class App extends React.Component {
             <Form getWeather={this.getWeather} />
           </div>
 
-          <div className="weather-container">
-            <Weather
-              temperature={this.state.temperature}
-              humidity={this.state.humidity}
-              pressure={this.state.pressure}
-              icon={this.state.icon}
-              error={this.state.error}
-              condition={this.state.condition}
-            />
+          <div class-name="forecast-container">
+            {this.state.weatherData && (
+              <Weather currentData={this.state.weatherData.list[0]} />
+            )}
           </div>
         </div>
         <div class-name="forecast-container">

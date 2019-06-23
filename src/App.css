@@ -103,14 +103,25 @@ weather-info {
 }
 */
 
-.weather-info2 {
+.current-info {
   display: flex;
-  width: 260px;
-
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  border: solid 1px;
+  font-size: 25px;
+  height: 500px;
+  flex-direction: column;
 }
-
+.current-sub {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: space-around;
+}
+.current-icon {
+  width: 200px;
+  height: 200px;
+  border: solid 1px;
+}
 .weather-type {
   color: white;
   align-content: center;
@@ -123,8 +134,8 @@ weather-info {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
 
+  border: solid 1px;
   height: 30vh;
   margin-top: 120px;
 }
