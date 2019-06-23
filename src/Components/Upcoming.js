@@ -18,7 +18,6 @@ const Upcoming = props => {
   return (
     <div className="upcoming">
       {forecast8.map(forecast => {
-        console.log(forecast);
         return (
           <div>
             <div className="time">{forecast.dt.format("hh:mm")}</div>

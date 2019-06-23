@@ -5,6 +5,7 @@ import getWeatherIcon from "../utilities/getWeatherIcon";
 const CurrentWeather = props => {
   return (
     <div className="Todaysweather">
+      <h2 className="city"> {props.weather.city.name} </h2>
       <img
         className="currentoverview"
         src={getWeatherIcon(props.weather.list[0].weather[0].id)}
@@ -31,3 +32,4 @@ const CurrentWeather = props => {
 export default CurrentWeather;
 
 //line4: give data as parameter.
+//func = props class=this.props
