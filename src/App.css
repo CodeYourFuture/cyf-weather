@@ -22,38 +22,6 @@ body {
   align-items: stretch;
 }
 
-.flex-item:nth-child(1) {
-  order: 0;
-
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
-}
-
-.flex-item:nth-child(2) {
-  order: 0;
-
-  flex: 0 1 auto;
-
-  align-self: auto;
-}
-
-.flex-item:nth-child(3) {
-  order: 0;
-
-  flex: 0 1 auto;
-
-  align-self: auto;
-}
-
-.flex-item:nth-child(4) {
-  order: 0;
-
-  flex: 0 1 auto;
-
-  align-self: auto;
-}
 .form-container {
   height: 200px;
   font-family: Raleway;
@@ -105,30 +73,6 @@ form {
   font-family: Raleway;
 }
 
-.flex-item:nth-child(1) {
-  order: 0;
-
-  flex: 0 1 auto;
-
-  align-self: auto;
-}
-
-.flex-item:nth-child(2) {
-  order: 0;
-
-  flex: 0 1 auto;
-
-  align-self: auto;
-}
-
-.flex-item:nth-child(3) {
-  order: 0;
-
-  flex: 0 1 auto;
-
-  align-self: auto;
-}
-
 .description-info {
   font-size: 30px;
   color: whitesmoke;
@@ -172,14 +116,6 @@ weather-info {
   align-content: center;
 }
 
-.img-icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 150px;
-  height: 150px;
-}
-
 .forecast-icn {
   font-size: 20px;
 }
@@ -198,4 +134,8 @@ ul {
 .img-icons {
   width: 40px;
   height: 40px;
+}
+.img-icons-main {
+  width: 200px;
+  height: 200px;
 }
