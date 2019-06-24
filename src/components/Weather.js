@@ -37,7 +37,7 @@ class Weather extends React.Component {
       <div className="current-info">
         <div className="current-icon">
           {this.props.currentData.icon}
-          <img src={weatherIcon} />
+          <img src={weatherIcon} alt="icons" />
         </div>
 
         <div className="current-description">
@@ -45,7 +45,10 @@ class Weather extends React.Component {
         </div>
 
         <div className="current-temp">
-          <p>tempreture:{this.props.currentData.main.temp}</p>
+          <p>
+            tempreture:{this.props.currentData.main.temp}
+            <span>&#8451;</span>
+          </p>
         </div>
 
         <div className="current-sub">

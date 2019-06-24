@@ -43,9 +43,16 @@ class ForeCast extends React.Component {
             <div className="forecast-3hour" key={index}>
               <p>{item.dt_txt.slice(10, -3)}</p>
               <div>
-                <img src={() => this.findIcon(item.weather[0].id)} />
+                <img
+                  src={`http://openweathermap.org/img/w/${
+                    item.weather[0].icon
+                  }.png`}
+                />
               </div>
-              <p>{item.main.temp}</p>
+              <p>
+                {item.main.temp}
+                <span>&#8451;</span>
+              </p>
             </div>
           );
         })}

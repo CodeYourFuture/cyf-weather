@@ -7,7 +7,6 @@ body {
   background-color: #8ccef4;
   width: 1fr;
   height: 1fr;
-  display: -ms-flexbox;
 
   display: flex;
 
@@ -15,7 +14,7 @@ body {
 
   flex-wrap: nowrap;
 
-  justify-content: stretch;
+  justify-items: space-between;
 
   align-content: flex-start;
 
@@ -54,24 +53,6 @@ button {
 form {
   padding: 50px 10px 10px 10px;
 }
-.weather-container {
-  height: 250px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  flex-wrap: nowrap;
-
-  justify-content: center;
-
-  align-content: flex-end;
-  margin-top: 100px;
-
-  align-items: center;
-  font-size: 20px;
-  font-family: Raleway;
-}
 
 .description-info {
   font-size: 30px;
@@ -106,9 +87,9 @@ weather-info {
 .current-info {
   display: flex;
   align-items: center;
-  border: solid 1px;
+
   font-size: 25px;
-  height: 500px;
+  height: 400px;
   flex-direction: column;
 }
 .current-sub {
@@ -117,10 +98,13 @@ weather-info {
   width: 400px;
   justify-content: space-around;
 }
+.current-description {
+  color: whitesmoke;
+  font-size: 50px;
+}
 .current-icon {
   width: 200px;
   height: 200px;
-  border: solid 1px;
 }
 .weather-type {
   color: white;
@@ -134,8 +118,8 @@ weather-info {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: 25px;
 
-  border: solid 1px;
   height: 30vh;
   margin-top: 120px;
 }

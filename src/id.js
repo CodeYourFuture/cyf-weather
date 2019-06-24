@@ -1,20 +1,30 @@
-const id = "response.list[0].weather[0].id";
-let weatherIcons;
-
+findIcon = id => { };
+let weatherIcon;
+const id = this.props.currentData.weather.id;
 if (id < 300) {
-  weatherIcons = "<img src={storm} />";
+  weatherIcon = storm;
 } else if (id > 300 && id <= 499) {
-  weatherIcons = "<img src={drizzle} />";
+  weatherIcon = drizzle;
 } else if (id >= 500 && id <= 599) {
-  weatherIcons = "<img src={rain} />";
+  weatherIcon = rain;
 } else if (id >= 600 && id <= 699) {
-  weatherIcons = "<img src={snow} />";
+  weatherIcon = snow;
 } else if (id >= 700 && id <= 799) {
-  weatherIcons = "<img src={fog} />";
-} else if (id == 800) {
-  weatherIcons = "<img src={clear} />";
-} else if (id == 801) {
-  weatherIcons = "<img src={partlycloudy} />";
+  weatherIcon = fog;
+} else if (id === 800) {
+  weatherIcon = clear;
+} else if (id === 801) {
+  weatherIcon = partlycloudy;
 } else if (id >= 802 && id <= 805) {
-  weatherIcons = "<img src={mostlycloudy} />";
+  weatherIcon = mostlycloudy;
 }
+console.log(this.props.data);
+
+temperature: response.main.temp,
+  city: response.name,
+    country: response.sys.country,
+      humidity: response.main.humidity,
+        description: response.weather[0].description,
+          error: ""
+
+src / img / weather - icons / clear.svg
