@@ -129,8 +129,10 @@ ul {
   list-style-type: none;
 }
 
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
-  forecast-container {
+@media (min-width: 320px), (min-height: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+
+  .forecast-container {
     font-size: 12px;
   }
   .current-info {
@@ -150,8 +152,7 @@ ul {
     height: 40px;
   }
 }
-
-@media (min-width: 481px), (min-height: 481) {
+@media (min-width: 481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 
   .forecast-container {
@@ -196,7 +197,7 @@ ul {
     height: 60px;
   }
 }
-@media (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .forecast-container {
     font-size: 25px;
@@ -218,7 +219,6 @@ ul {
     height: 70px;
   }
 }
-
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
   .forecast-container {
@@ -241,8 +241,9 @@ ul {
     height: 80px;
   }
 }
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .forecast-container {
     font-size: 35px;
   }
