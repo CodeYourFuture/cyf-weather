@@ -83,7 +83,9 @@ weather-info {
   flex-direction: row;
 }
 */
-
+.error {
+  font-size: 25px;
+}
 .current-info {
   display: flex;
   align-items: center;
@@ -133,4 +135,85 @@ ul {
 .img-icons-main {
   width: 200px;
   height: 200px;
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .forecast-container {
+    font-size: 12px;
+  }
+  .current-info {
+    font-size: 12px;
+  }
+  .current-description {
+    font-size: 12px;
+  }
+  input {
+    font-size: 16px;
+  }
+  button{
+    font-size: 16px;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  .forecast-container {
+    font-size: 16px;
+  }
+  .current-info {
+    font-size: 16px;
+  }
+  .current-description {
+    font-size: 16px;
+  }
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .forecast-container {
+    font-size: 20px;
+  }
+  .current-info {
+    font-size: 20px;
+  }
+  .current-description {
+    font-size: 20px;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .forecast-container {
+    font-size: 25px;
+  }
+  .current-info {
+    font-size: 25px;
+  }
+  .current-description {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .forecast-container {
+    font-size: 30px;
+  }
+  .current-info {
+    font-size: 30px;
+  }
+  .current-description {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+
+  .forecast-container {
+    font-size: 35px;
+  }
+  .current-info {
+    font-size: 35px;
+  }
+  .current-description {
+    font-size: 35px;
+  }
 }

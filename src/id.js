@@ -20,6 +20,12 @@ if (id < 300) {
 }
 console.log(this.props.data);
 
+
+<div>
+  <img src={() => this.findIcon(item.weather[0].id)} />
+</div>
+  <p>{item.main.temp}</p>
+            </div >
 temperature: response.main.temp,
   city: response.name,
     country: response.sys.country,

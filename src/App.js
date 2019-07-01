@@ -34,7 +34,8 @@ class App extends React.Component {
 
     if (response.list) {
       this.setState({
-        weatherData: response
+        weatherData: response,
+        data: response
       });
     } else {
       this.setState({
@@ -49,16 +50,17 @@ class App extends React.Component {
         <div className="main-App">
           <div className="form-container">
             <Form getWeather={this.getWeather} />
+            <div className="error"> {this.state.error}</div>
           </div>
 
-          <div class-name="forecast-container">
+          <div class-name="forecast-container0">
             {this.state.weatherData && (
               <Weather currentData={this.state.weatherData.list[0]} />
             )}
           </div>
         </div>
         <div class-name="forecast-container">
-          {this.state.weatherData && <ForeCast data={this.state.weatherData} />}
+          {this.state.weatherData && <ForeCast data={this.state.data} />}
         </div>
       </div>
     );

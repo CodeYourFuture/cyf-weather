@@ -46,14 +46,14 @@ class Weather extends React.Component {
 
         <div className="current-temp">
           <p>
-            tempreture:{this.props.currentData.main.temp}
+            Tempreture:{this.props.currentData.main.temp}
             <span>&#8451;</span>
           </p>
         </div>
 
         <div className="current-sub">
-          <p>humididty:{this.props.currentData.main.humidity}</p>
-          <p>pressure:{this.props.currentData.main.pressure}</p>
+          <p>Humididty:{this.props.currentData.main.humidity}</p>
+          <p>Pressure:{this.props.currentData.main.pressure}</p>
         </div>
       </div>
     );
