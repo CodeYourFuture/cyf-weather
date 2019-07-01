@@ -43,7 +43,7 @@ class ForeCast extends React.Component {
             <div className="forecast-3hour" key={index}>
               <p>{item.dt_txt.slice(10, -3)}</p>
               <div>
-                <img
+                <img className='forecast-icons'
                   src={`http://openweathermap.org/img/w/${
                     item.weather[0].icon
                   }.png`} alt='icon'
