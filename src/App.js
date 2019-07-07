@@ -20,9 +20,27 @@ import "./grid.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      items: [],
+      isLoading: false
+    };
   }
 
+  componentDidMount() {
+    var Default = "94bd2232bd51095641bf45f4639f13b5";
+    var CITY_NAME = "London";
+    fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=${CITY_NAME}&cnt=8&units=metric&appid=${Default}`
+    )
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        this.setState({
+          isLoading: true,
+          items: json
+        });
+      });
+  }
   getIcons(weatherId) {
     if (weatherId < 300) {
       return storm;
@@ -43,27 +61,31 @@ class App extends Component {
     }
   }
   render() {
-    return (
-      <section>
-        <SearchBar buttonTitle="searchCity" />
-        <CurrentWeather
-          weatherNow={fakeWeather.list[0]}
-          icons={id => {
-            return this.getIcons(id);
-          }}
-        />
+    var { isLoading, items } = this.state;
+    if (!isLoading) {
+      return <span>Loading... 👽</span>;
+    } else {
+      return (
+        <section>
+          <SearchBar buttonTitle="searchCity" />
+          <CurrentWeather
+            weatherNow={items.list[0]}
+            icons={id => {
+              return this.getIcons(id);
+            }}
+          />
 
-        <Forcast
-          list={fakeWeather.list}
-          imgSrc={mostlycloudy}
-          temprature="8°C"
-          icons={id => {
-            return this.getIcons(id);
-          }}
-        />
-      </section>
-    );
+          <Forcast
+            list={items.list}
+            imgSrc={mostlycloudy}
+            temprature="8°C"
+            icons={id => {
+              return this.getIcons(id);
+            }}
+          />
+        </section>
+      );
+    }
   }
 }
-
 export default App;
