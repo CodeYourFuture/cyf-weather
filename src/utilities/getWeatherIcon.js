@@ -7,14 +7,12 @@ import partlycloudy from "../img/weather-icons/partlycloudy.svg";
 import rain from "../img/weather-icons/rain.svg";
 import clear from "../img/weather-icons/clear.svg";
 
-
 const getWeatherIcon = weatherId => {
-  console.log(weatherId);
   if (weatherId < 300) {
     //TODO: this is not complete - it ALWAYS returns the same thing!
     return storm;
   } else if (weatherId < 499) {
-    return drizzle ;
+    return drizzle;
   } else if (weatherId < 599) {
     return rain;
   } else if (weatherId < 699) {

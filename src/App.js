@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       weather: weather,
       city: "London",
-      err: ""
+      err: "",
+      success: false
     };
   }
   //json data^
@@ -27,30 +28,31 @@ class App extends Component {
   };
 
   handleClick = () => {
-    console.log("i've been clicked");
     fetch(
       `http://api.openweathermap.org/data/2.5/forecast?q=${
         this.state.city
-      }&cnt=8&units=metric&appid=${"a75d5e4c8cb937be92dab81195a1c637"}`
+      }&cnt=8&units=metric&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then(res => res.json())
       .then(res => {
-        console.log("anything", res);
         if (res.cod === "200") {
           this.setState({
-            weather: res
+            weather: res,
+            success: true
           });
         }
         if (res.cod !== "200") {
           this.setState({
-            err: "invalid city name"
+            err: "invalid city name",
+            success: false
           });
         }
       })
       .catch(err => {
         if (err) {
           this.setState({
-            err: "invalid city name"
+            err: "Sorry The server could not complete your request",
+            success: false
           });
         }
       });
@@ -81,7 +83,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state);
     return (
       <div className="app">
         <div className="container">
@@ -90,9 +91,7 @@ class App extends Component {
             changeHandler={this.changeHandler}
             handleClick={this.handleClick}
           />
-          {this.state.err ? (
-            <div className="app__main"> {this.state.err} </div>
-          ) : (
+          {this.state.success ? (
             <main
               className="app__main"
               style={{
@@ -104,6 +103,8 @@ class App extends Component {
               <CurrentWeather weather={this.state.weather} />
               <Upcoming weather={this.state.weather} />
             </main>
+          ) : (
+            <div className="app__main"> {this.state.err} </div>
           )}
         </div>
       </div>
@@ -118,3 +119,7 @@ export default App;
 //unmount auto unmounts when state changes. unless a setinterval then it needs to explicitly needs to unmount.
 //if there is an error then line 72 if not then display components.
 //default when page loads component did mount. next
+//key is to keep track who is using the api
+//other if is if person makes a mistake and catch err is if server cant get the api
+//if sucess then setstate if not then show error.
+//cod is from the json

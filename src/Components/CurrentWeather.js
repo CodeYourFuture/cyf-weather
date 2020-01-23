@@ -1,5 +1,5 @@
 import React from "react";
-import partlycloudy from "../img/weather-icons/partlycloudy.svg";
+
 import getWeatherIcon from "../utilities/getWeatherIcon";
 
 const CurrentWeather = props => {
@@ -9,11 +9,12 @@ const CurrentWeather = props => {
       <img
         className="currentoverview"
         src={getWeatherIcon(props.weather.list[0].weather[0].id)}
+        alt="weathericons"
       />
       <div className="overview">overcast clouds</div>
       <div className="temperature">
         <span className="data-heading"> Temperature</span>{" "}
-        {props.weather.list[0].main.temp}
+        {props.weather.list[0].main.temp + "°C"}
       </div>
       <div className="characteristics">
         <div>

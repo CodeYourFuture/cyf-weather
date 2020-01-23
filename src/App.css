@@ -21,16 +21,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  border: lightblue solid;
-  height: 100%;
-}
-
 /*  Search bar */
 .app__header {
-  border: #0366d6;
   background-color: #759dd2;
-  opacity: 30%;
   align-self: flex-start;
   flex-direction: row;
 }
@@ -41,6 +34,8 @@
 input {
   background-color: #759dd2;
   border: none;
+  border-bottom: 1px solid grey;
+  margin-right: 10px;
 }
 
 button {
@@ -54,7 +49,9 @@ button {
 
 .app__main {
   background-color: #9ccdf2;
-  height: 85%;
+}
+.city {
+  border-top: 10px;
 }
 
 .Todaysweather {
@@ -94,6 +91,6 @@ button {
 }
 img {
   width: 60%;
-  margin-top: 20px;
+  /* margin-top: 10px; */
   margin-bottom: 20px;
 }
