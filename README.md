@@ -7,7 +7,7 @@ Please **fork** and **clone** this repository.  There are instructions for how t
 Then navigate to the correct directory using the command line.
 
 Once you're in the project directory, you can run:
-```
+```bash
 npm install
 
 npm start
@@ -21,8 +21,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Edit `App.js` and add a tiny change, like adding your name, to see if the change appears.
 
 Add and commit this change to git, and push it up to your remote github repo:
-```
-git add .
+```git
+git add App.js
 git commit -m "Added my name to the app"
 git push
 ```
@@ -60,12 +60,12 @@ There is a special way to show images from a React app created with create-react
 
 At the top of your component, import the image like this (remember to give it a name!)
 
-```
+```javascript
 import storm from '../img/weather-icons/storm.svg';
 ```
 
 Then later in your `<img/>` tag, use the imported value as the image source, like this:
-```
+```html
 <img src={storm} alt="storm icon" />
 ```
 
@@ -100,7 +100,7 @@ Copy all contents into a new file and add it to your project somewhere under the
 
 Import it into your react app with
 
-```
+```javascript
 import FakeWeatherData from "./data/FakeWeather.json";
 ```
 
@@ -115,7 +115,7 @@ This JSON represents weather data for **just one city**.
 It includes **an array called `list` containing the weather predicitons for the next 5 days, split into 8 x 3-hour chunks** 
 Each object inside `list` contains a `weather` array with an object that looks like this:
 
-```
+```json
 "weather": [
   {
     "id": 521,
@@ -169,7 +169,7 @@ Look at the design:
 
 - Each object inside `list` contains a `weather` array with an object that looks like this:
 
-```
+```json
 "weather": [
   {
     "id": 521,
