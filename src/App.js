@@ -1,7 +1,7 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import storm from "../src/img/weather-icons/storm.svg";
+import Icon from './components/Icon/Icon';
 
 //configs
 const siteTitle = process.env.REACT_APP_SITE_TITLE ?? "CYF Weather";
@@ -11,9 +11,10 @@ function App() {
     <div className="App">
       <Header title={siteTitle} />
       <main className="c-site-main" tabIndex="0">
+      <Icon name="clear"/>
+    
       </main>
       <Footer />
-      <img src={storm} alt="storm icon" />
     </div>
   );
 }
