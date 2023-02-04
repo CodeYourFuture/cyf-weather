@@ -1,26 +1,4 @@
-// these type styles can be added to any element, but you might prefer to just call the variable directly
-// think carefully about what choice makes sense
-// .o-type {
-//   // this ampersand & is a powerful feature of SASS
-//   // https://sass-lang.com/documentation/style-rules/parent-selector
-//   &__body {
-//     // Don't use clamps for your main body copy.
-//     font-size: 100%;
-//     &--small {
-//       font-size: var(--theme-type-size--6);
-//     }
-//     &--large {
-//       font-size: var(--theme-type-size--4);
-//     }
-//   }
-//   &__heading {
-//     @each $level in $heading__levels {
-//       &--#{$level} {
-//         font-size: var(--theme-type-size--#{$level});
-//       }
-//     }
-//   }
-// }
+
 
 .o-type__invisible {
   border: 0 !important;
