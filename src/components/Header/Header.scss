@@ -1,14 +1,8 @@
 @use "../../theme/utilities.scss";
 
 
-.c-site-header { 
- background-color:#789cdc;
- padding-top: 5%;
+.c-site-header {
+    background-color: var(--theme-color--block);
 }
 
-.c-site-header h3 {
-    position: relative;
-    bottom: 35px;
-    color: white;
-    left: 30px;
-}
+
