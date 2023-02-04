@@ -10,6 +10,10 @@ function App() {
     <div className="App">
       <Header title={siteTitle} />
       <main className="c-site-main" tabIndex="0">
+        {/* fetch the data
+        images
+        current Weather
+        future Weather */}
       </main>
       <Footer />
     </div>
