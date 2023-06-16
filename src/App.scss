@@ -1,2 +1,102 @@
 @use "theme/utilities.scss";
 @use "theme/global.scss";
+// @use "theme/fonts.scss";
+
+
+.App{
+    background-color: #8ecae6;
+}
+
+.c-site-header{
+  padding: 20px;
+}
+
+.header{
+  background-color: #219ebc;
+  padding: 10px;
+}
+
+.Location{
+  background-color: #37b0cf;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid rgb(8, 8, 78);
+}
+
+.button{
+  background-color: #0d6b9a;
+  color: white;
+  margin-left: 15px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+// ----------TodayForecast section----------
+.weather-img{
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.description{
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.current-container{
+  display: flex;
+  justify-content: center;
+}
+
+.humid-press{
+  padding: 30px;
+}
+
+
+// // -----------HourlyForecast------
+
+// .container{
+//   background-color: #023047;
+//   display: flex;
+//   flex-wrap: nowrap;
+//   width: 100%;
+//   padding: 0px 2em 0px 2em;
+//   justify-content: center;
+// }
+
+.hourlyForecast{
+  display: flex;
+  // flex-direction: column;
+  background-color: #023047;
+  // text-align: center;
+  line-height: 50px;
+  padding: 0px 2em 0px 2em;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.items{
+  display: flex;
+  height: auto;
+  // column-gap: 20px;
+  // background-color: #023047;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  // border: 1px solid #fb8500;
+}
+
+.time,.temperature{
+  display: flex;
+  color: white;
+}

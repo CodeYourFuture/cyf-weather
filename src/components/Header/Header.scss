@@ -1,8 +1,7 @@
 @use "../../theme/utilities.scss";
+@use "../../theme/global.scss";
 
 
 .c-site-header {
     background-color: var(--theme-color--block);
 }
-
-
