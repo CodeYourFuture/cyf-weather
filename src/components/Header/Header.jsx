@@ -3,7 +3,7 @@ import "./Header.scss";
 
 const Header = ({getNewLocation}) => {
   const [city, setCity] = useState("");
-console.log({ city });
+// console.log({ city });
 
   return (
     <header className="header">

@@ -6,7 +6,6 @@ import { TodayForecast } from "./components/TodayForecast/TodayForecast";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 // import Icon from "./components/Icon/Icon";
 
-
 //configs
 const siteTitle = process.env.REACT_APP_SITE_TITLE ?? "CYF Weather";
 
@@ -20,11 +19,11 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-      });
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
-    
     <div className="App">
       <Header title={siteTitle} getNewLocation={getNewLocation} data={data} />
 
